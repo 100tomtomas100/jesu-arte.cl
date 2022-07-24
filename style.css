@@ -1,0 +1,52 @@
+:root {
+    --navbarheight: calc(calc(10px + 15vw));
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Lobster";
+    src: url("fonts/Lobster-Regular.ttf") format("truetype");
+}
+#index-body {
+    background-image: url("img/index-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#index-body image {
+    max-width: 100%;
+    object-fit: contain;
+}
+.navbar {
+    height: var(--navbarheight);
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    position: fixed;
+}
+#logo a{
+    height: var(--navbarheight);
+    width: 100%;
+    display: flex;
+    margin-left: 20px;
+    padding: 7px 0 7px 0;
+}
+#logo a img {
+    object-fit: contain;
+}
+#navbar-buttons {
+    width: 100%;
+    height: var(--navbarheight);
+    display: flex;
+    padding-bottom: 20px;
+    align-items: center;
+    justify-content: space-around;     
+}
+
+#navbar-buttons div a img {
+    object-fit: contain;
+    height: var(--navbarheight);
+}
