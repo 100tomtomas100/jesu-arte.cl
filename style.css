@@ -82,7 +82,7 @@
     max-width: calc(10px + 20%);
 }
 #navbar-mobile-right {
-    min-width: 100px;
+    min-width: 150px;
     margin-top: 7px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -113,7 +113,7 @@
     font-weight: 600;
 }
 #navbar-mobile-buttons li {
-    min-width: calc(150px + 5vw);
+    min-width: calc(120px + 5vw);
     border-top: 1px solid #E7E7E7;  
     border-right: 1px solid #E7E7E7;
     border-left: 1px solid #E7E7E7;
