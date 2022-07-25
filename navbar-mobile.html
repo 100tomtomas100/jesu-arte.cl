@@ -14,16 +14,16 @@
 <script>
 const expandNavBar = (() => {
     let buttons = document.getElementById("navbar-mobile-buttons");
-    let onLoad = window.addEventListener('load', (event) => {    
+    window.onload = (() => {
         buttons.style.display = "none";
-    });
+    })();
     let expand = document.getElementById("burger-menu").addEventListener("click", () => {
         if (buttons.style.display === "none") {
         buttons.style.display = "";
         } else {
         buttons.style.display = "none"
         };
-    })
-    return {onLoad, expand};
+    });   
+    return {expand};
 })();
 </script>

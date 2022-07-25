@@ -97,7 +97,7 @@
 }
 #burger-menu {
     grid-area: 1/2/2/3;
-    margin-right: 5px;
+    margin-right: 7px;
     display: flex;
     justify-content: flex-end;
     font-size: calc(20px + 1.5vw);
