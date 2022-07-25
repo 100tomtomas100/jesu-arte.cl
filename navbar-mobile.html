@@ -1,0 +1,29 @@
+<!--navbar for mobile-->
+<div id="logo-mobile"><a href="index.html"><img src="img/logo.png" alt="girl holding a cat logo"></a></div>
+<div id="navbar-mobile-right">
+    <div id="languages-mobile"><a href=""><img src="img/esp-to-eng.png" alt="english to spanish"></a></div>
+    <div id="burger-menu">&#9776</div>
+    <ul id="navbar-mobile-buttons">        
+        <li id="about-us-mobile" class="button"><a href="index.html">Acerca de mi</a></li>
+        <li id="portfolio-mobile" class="button"><a href="portfolio.html">Mis Trabajos</a></li>
+        <li id="how-buy-mobile" class="button"><a href="how-buy.html">Cómo comprar?</a></li>
+        <li id="contact-us-mobile" class="button"><a href="contact-us.html">Contáctame</a></li>
+        <li id="blog-mobile" class="button"><a href="blog.html">Blog</a></li>
+    </ul>
+</div>
+<script>
+const expandNavBar = (() => {
+    let buttons = document.getElementById("navbar-mobile-buttons");
+    let onLoad = window.addEventListener('load', (event) => {    
+        buttons.style.display = "none";
+    });
+    let expand = document.getElementById("burger-menu").addEventListener("click", () => {
+        if (buttons.style.display === "none") {
+        buttons.style.display = "";
+        } else {
+        buttons.style.display = "none"
+        };
+    })
+    return {onLoad, expand};
+})();
+</script>
