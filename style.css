@@ -1,5 +1,5 @@
 :root {
-    --navbarheight: calc(calc(10px + 15vw));
+    --navbarheight: calc(12px + 12vw);
 }
 * {
     margin: 0;
@@ -22,31 +22,53 @@
 }
 .navbar {
     height: var(--navbarheight);
-    width: 100vw;
     display: grid;
     grid-template-columns: 1fr 5fr;
-    position: fixed;
+    grid-template-rows: 1fr 1fr;
+    position: sticky;
 }
-#logo a{
-    height: var(--navbarheight);
-    width: 100%;
+#logo{
+    grid-area: 1/1/3/2;
+}
+#logo a{    
     display: flex;
     margin-left: 20px;
     padding: 7px 0 7px 0;
 }
 #logo a img {
     object-fit: contain;
+    max-width: calc(20px + 45%);
 }
 #navbar-buttons {
-    width: 100%;
-    height: var(--navbarheight);
+    grid-area: 1/2/2/3;
     display: flex;
-    padding-bottom: 20px;
-    align-items: center;
-    justify-content: space-around;     
+    justify-content: space-around;  
+    align-items: center; 
 }
-
-#navbar-buttons div a img {
+#navbar-buttons div a img {    
     object-fit: contain;
-    height: var(--navbarheight);
+    max-width: calc(50px + 40%);
+}
+#languages {
+    grid-area: 2/2/3/3;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+#languages a img {
+    width: calc(10px + 2vw);
+}
+#content {
+    height: calc(10px + 60vh);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#about-us-text p {   
+    width: 50vw;
+    font-family: "Lobster";
+    font-size: calc(5px + 2vw);
+    display: flex;
+    text-align: center;
 }
