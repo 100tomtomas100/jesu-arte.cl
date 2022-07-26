@@ -1,0 +1,24 @@
+<div id="footer-credits">
+    <h5 id="designed-by">DESIGNED BY</h5>
+    <h2 id="tomas">Tomas Pocius</h2>
+    <h4 id="year"></h4>
+</div>
+<div id="footer-cooperation">
+    <h4 id="marcia">In cooperation with &nbsp
+        <a href="https://www.digitalmarcia.com">Digital Marcia</a></h4>
+    <div id="cooperation-contacts">
+        <h5>CONTACT</h5>
+        <h5>SOCIALIZE</h5>
+    </div>    
+</div>
+<script>
+    const currentYear = (() => {
+        let year = document.getElementById("year");
+        let yearNow = new Date().getFullYear();
+        if (yearNow === 2022) {
+            year.innerText =`© ${yearNow}`;
+        } else {
+            year.innerText =`© 2022 - ${yearNow}`;
+        }
+    })();
+</script>
