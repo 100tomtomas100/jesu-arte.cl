@@ -1,0 +1,57 @@
+:root {
+    --navbarheight: calc(12px + 12vw);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* custom fonts */
+@font-face {
+    font-family: "Lobster";
+    src: url("../fonts/Lobster-Regular.ttf") format("truetype");
+}
+@font-face {
+   font-family: "Proxima-Soft";
+    src: url("../fonts/FontsFree-Net-ProximaSoft-Bold.ttf") format("truetype"); 
+}
+/*index-body*/
+#index-body {
+    background-image: url("../img/index-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid;
+    height: 100%;
+    grid-template-rows: 1fr 5fr 3fr;
+}
+#index-body image {
+    max-width: 100%;
+    object-fit: contain;
+}
+/*index content*/
+#content {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 10px;    
+}
+#about-us-text p {   
+    width: 50vw;
+    font-size: calc(5px + 2vw);
+    display: flex;
+    text-align: center;
+    background-color: #F0ECEC;
+    padding: 5px;
+    border-radius: 10px;
+}
+/*responsive screen sizes*/
+@media (max-width: 480px) {
+    .navbar {
+        display: none;
+    }
+}
+@media (min-width: 481px) {
+    .navbar-mobile{
+        display: none;
+    }
+}
