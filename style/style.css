@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
 }
 html {
     overflow-x: hidden;
@@ -53,7 +54,7 @@ html {
 }
 #index-gallery {
     grid-row: 2/3;
-    background-color: aqua;
+    
 }
 #index-reviews {
     grid-row: 3/4;
