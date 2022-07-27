@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 /*gallery for index for mobile*/
 .painting {
     position: absolute;  
@@ -5,7 +10,6 @@
 }
 .painting[data-active="main"] {
     opacity: 1;
-    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
@@ -14,9 +18,9 @@
 .painting[data-active="next"] {
     opacity: 1;
     z-index: 1;
-    right: 0;
     top: 50%;
-    transform: translate(50%, -50%);       
+    right: 0%;
+    transform: translate(50%,-50%);        
 }
 .painting[data-active="next"] img {
     max-width: 50%;
@@ -44,10 +48,10 @@
 #index-gallery ul {
     width: 100%;
     height: 100%;
-    list-style: none;  
+    list-style: none; 
 }
 #index-gallery ul li {
-    width: 70%;
+    width: 80%;
 }
 .index-mobile-gallery-buttons {
     position: absolute;
