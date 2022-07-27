@@ -7,9 +7,6 @@
     box-sizing: border-box;
     -webkit-overflow-scrolling: touch;
 }
-html {
-    overflow-x: hidden;
-}
 /* custom fonts */
 @font-face {
     font-family: "Lobster";
@@ -72,6 +69,7 @@ html {
     #index-body{
         background-size: 480px auto;
         background-repeat: no-repeat;
+        overflow-x: hidden;
     }
 }
 @media (min-width: 481px) {
