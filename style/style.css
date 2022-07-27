@@ -6,6 +6,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+html {
+    overflow-x: hidden;
+}
 /* custom fonts */
 @font-face {
     font-family: "Lobster";
@@ -50,6 +53,7 @@
 }
 #index-gallery {
     grid-row: 2/3;
+    background-color: aqua;
 }
 #index-reviews {
     grid-row: 3/4;
@@ -67,7 +71,6 @@
     #index-body{
         background-size: 480px auto;
         background-repeat: no-repeat;
-        overflow-x: hidden;
     }
 }
 @media (min-width: 481px) {
