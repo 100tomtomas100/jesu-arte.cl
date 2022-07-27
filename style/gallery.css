@@ -1,0 +1,76 @@
+/*gallery for index for mobile*/
+.painting {
+    position: absolute;  
+    opacity: 0; 
+}
+.painting[data-active="main"] {
+    opacity: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+}
+.painting[data-active="next"] {
+    opacity: 1;
+    z-index: 1;
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -50%);       
+}
+.painting[data-active="next"] img {
+    max-width: 50%;
+    object-fit: contain;
+}
+.painting[data-active="prev"] {
+    opacity: 1;
+    z-index: 1;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.painting[data-active="prev"] img {
+    max-width: 50%;
+    object-fit: contain;
+}
+
+.painting img {
+    max-width: 100%;
+    object-fit: contain;    
+}
+#index-gallery {
+    position: relative;
+}
+#index-gallery ul {
+    width: 100%;
+    height: 100%;
+    list-style: none;  
+}
+#index-gallery ul li {
+    width: 70%;
+}
+.index-mobile-gallery-buttons {
+    position: absolute;
+    font-size: 45px;
+    border: none;
+    background: none;
+    top: 50%;
+    z-index: 3;
+    transform: translateY(-50%);
+    color: rgba(255,255,255, 0.5);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.index-mobile-gallery-buttons:hover,
+.index-mobile-gallery-buttons:focus {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.index-mobile-gallery-buttons.prev {
+    left: 10px;
+}
+.index-mobile-gallery-buttons.next {
+    right: 10px
+}

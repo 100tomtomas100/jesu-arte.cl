@@ -22,7 +22,7 @@
     background-repeat: no-repeat;
     display: grid;
     height: 100%;
-    grid-template-rows: 1fr 5fr 3fr;
+    grid-template-rows: 1fr 18fr 3fr;
 }
 #index-body image {
     max-width: 100%;
@@ -30,10 +30,15 @@
 }
 /*index content*/
 #content {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-rows: 5fr 4fr 5fr 3fr;
     padding: 10px;    
+}
+#about-us-text {
+    height: 100%;
+    grid-row: 1/2;
+    display: flex;
+    align-items: center;
 }
 #about-us-text p {   
     width: 50vw;
@@ -44,14 +49,31 @@
     padding: 5px;
     border-radius: 10px;
 }
+#index-gallery {
+    grid-row: 2/3;
+
+}
+#index-reviews {
+    grid-row: 3/4;
+    background-color:bisque;
+}
+#index-social-media {
+    grid-row: 4/5;
+    background-color: aqua;
+}
 /*responsive screen sizes*/
 @media (max-width: 480px) {
     .navbar {
         display: none;
+    }
+    #index-body{
+        background-size: 480px auto;
+        background-repeat: no-repeat;
     }
 }
 @media (min-width: 481px) {
     .navbar-mobile{
         display: none;
     }
+    
 }

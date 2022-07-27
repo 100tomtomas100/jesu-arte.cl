@@ -100,8 +100,12 @@
     min-height: 45px;  
     display: flex;
     align-items: center;
-    background-color: #F5F5F5;
-    opacity: 0.6;
+    background-color: rgba(245,245,245, 0.6);    
+    cursor: pointer;
+}
+#navbar-mobile-buttons li:hover,
+#navbar-mobile-buttons li:focus {
+    background-color: white;
 }
 #blog-mobile {
     border-bottom: 1px solid #E7E7E7;
