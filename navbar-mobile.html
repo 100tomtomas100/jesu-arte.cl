@@ -12,6 +12,16 @@
     </ul>
 </div>
 <script>
+const navbarBackground = (() => {
+    const navbar = document.querySelector('.navbar-mobile');
+window.onscroll = () => {
+    if (window.scrollY > 100) {
+        navbar.style.background = "rgba(240, 236, 236, 0.7)";
+    } else {
+        navbar.style.backgroundColor = "transparent";
+    }
+};
+})();
 const expandNavBar = (() => {
     let buttons = document.getElementById("navbar-mobile-buttons");
     window.onload = (() => {
@@ -24,6 +34,14 @@ const expandNavBar = (() => {
         buttons.style.display = "none"
         };
     });   
-    return {expand};
+    let close = document.querySelectorAll("#content, .footer-mobile");
+        close.forEach(element => {
+            element.addEventListener("click",() => {
+                if (buttons.style.display === "") {
+                    buttons.style.display = "none";
+                    console.log("working")
+                }
+            });
+        });
 })();
 </script>

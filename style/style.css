@@ -50,9 +50,9 @@
     padding: 5px;
     border-radius: 10px;
 }
-#index-gallery {
+#index-mobile-gallery {
     grid-row: 2/3;
-   
+    background-color: aqua;
 }
 #index-reviews {
     grid-row: 3/4;

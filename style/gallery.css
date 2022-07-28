@@ -1,21 +1,18 @@
 /*gallery for index for mobile*/
-.painting {
+.painting-mobile {
     display: none;     
 }
-.painting[data-active="main"] {
+.painting-mobile[data-active="main"] {
     z-index: 2;
     display: block;
     position: absolute;
     opacity: 1;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);     
-    transition: dataset 0s;
-    -webkit-transition: dataset 0s;
-    -moz-transition: dataset 0s; 
+    transform: translate(-50%,-50%);      
     transition: transform 1s cubic-bezier(0.42, 1.46, 0, 1.1); 
 }
-.painting[data-active="next"] {
+.painting-mobile[data-active="next"] {
     display: block;
     position: absolute;
     display: flex;
@@ -27,11 +24,11 @@
     z-index: 1;
     
 }
-.painting[data-active="next"] img {
+.painting-mobile[data-active="next"] img {
     max-width: 50%;
     object-fit: contain;    
 }
-.painting[data-active="prev"] {
+.painting-mobile[data-active="prev"] {
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -42,30 +39,30 @@
     top: 50%;
     transform: translate(-80%, -50%);    
 }
-.painting[data-active="prev"] img {
+.painting-mobile[data-active="prev"] img {
     max-width: 50%;
-    object-fit: contain;
- 
+    object-fit: contain; 
 }
 
-.painting img {
+.painting-mobile img {
     max-width: 100%;
     object-fit: contain;    
 }
-#index-gallery {
+#index-mobile-gallery {
     position: relative;
 }
-#index-gallery ul {
+#index-mobile-gallery ul {
     width: 100%;
     height: 100%;
     list-style: none; 
 }
-#index-gallery ul li {
+#index-mobile-gallery ul li {
     width: 80%;
 }
 .index-mobile-gallery-buttons {
+    max-width: 100px;
     position: absolute;
-    font-size: 45px;
+    font-size: 40px;
     border: none;
     background: none;
     top: 50%;

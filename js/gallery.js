@@ -1,3 +1,4 @@
+// gallery 
 const gallery = (() => {
     const buttons = document.querySelectorAll("[data-mobile-gallery-button]");
     buttons.forEach(button => {
