@@ -20,6 +20,10 @@ window.onscroll = () => {
     } else {
         navbar.style.backgroundColor = "transparent";
     }
+    //navbar to close on scrolling
+    if (window.scrollY > 0 && document.getElementById("navbar-mobile-buttons").style.display === "") {
+        document.getElementById("navbar-mobile-buttons").style.display = "none";
+    }
 };
 })();
 const expandNavBar = (() => {
@@ -33,16 +37,13 @@ const expandNavBar = (() => {
         } else {
         buttons.style.display = "none"
         };
-    });   
+    });     
     let close = document.querySelectorAll("#content, .footer-mobile");
         close.forEach(element => {
             element.addEventListener("click",() => {
                 if (buttons.style.display === "") {
                     buttons.style.display = "none";
-                }
-                if (buttons.style.display === "" && window.scrollY > 0) {
-                    buttons.style.display = "none";
-                }
+                }                
             });
         });
 })();
