@@ -39,7 +39,9 @@ const expandNavBar = (() => {
             element.addEventListener("click",() => {
                 if (buttons.style.display === "") {
                     buttons.style.display = "none";
-                    console.log("working")
+                }
+                if (buttons.style.display === "" && window.scrollY > 0) {
+                    buttons.style.display = "none";
                 }
             });
         });
