@@ -52,7 +52,7 @@
 }
 #index-gallery {
     grid-row: 2/3;
-    background-color: aqua;
+   
 }
 #index-reviews {
     grid-row: 3/4;
