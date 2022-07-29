@@ -1,30 +1,30 @@
 // gallery 
 const gallery = (() => {
     const buttons = document.querySelectorAll("[data-mobile-gallery-button]");
-    buttons.forEach(button => {
+    const allPaintings = document.querySelectorAll("[data-active]");
+    buttons.forEach(button => {        
         button.addEventListener("click", () => {
-            let counter = button.dataset.mobileGalleryButton === "next" ? 1 : -1;
-            const allPaintings = document.querySelectorAll("[data-active]");
-            let mainPainting = (() => {
+            let counter = button.dataset.mobileGalleryButton === "next" ? 1 : -1;            
+            mainPainting = (() => {
                 for (let i = 0; allPaintings.length > i; i++) {
                     if ([...allPaintings][i].dataset.active === "main" && allPaintings.length -1 != i
-                        && counter === 1) {
-                        return i+1
+                        && counter === 1) {                          
+                            return i+1
                     }
                     if ([...allPaintings][i].dataset.active === "main" && allPaintings.length -1 === i
-                        && counter === 1) {
-                        return 0
+                        && counter === 1) {                            
+                            return 0
                     }
                     if ([...allPaintings][i].dataset.active === "main" && i != 0
-                    && counter === -1) {
-                        return i - 1
+                    && counter === -1) {                                                    
+                            return i - 1
                     }
                     if ([...allPaintings][i].dataset.active === "main" && i === 0
-                        && counter === -1) {
-                        return  allPaintings.length - 1
+                        && counter === -1) {                                                   
+                            return  allPaintings.length - 1
                     }
                 }
-            })(); 
+            })();            
             let prevPainting = 0;
             let delPainting = 0;
             let nextPainting = 0;
@@ -83,7 +83,26 @@ const gallery = (() => {
                 [...allPaintings][nextPainting].dataset.active = "next";   
                 [...allPaintings][prevPainting].dataset.active = "prev";                                          
                 [...allPaintings][delPainting].dataset.active = "";                
-            })();         
-        })
-    })
+            })();   
+        });
+    });
+    const enlargen = (() => {        
+        allPaintings.forEach(painting => {
+            painting.addEventListener("click", () => {
+                const mobGal = document.getElementById("index-mobile-gallery");              
+                mobGal.style.height = "100vh";
+                allPaintings.forEach(painting => {
+                    painting.style.width = "100vw"
+                });
+                mobGal.scrollIntoView();  
+                mobGal.style.backgroundColor = "rgba(32, 108, 167, 0.3)"          
+                
+                document.getElementById("index-body").style.overflow = "hidden";
+                document.querySelector(".navbar-mobile").style.backgroundColor = ""               
+            })    
+        }) 
+    })();   
+                
+                 
+    
 })();

@@ -32,7 +32,7 @@
 /*index content*/
 #content {
     display: grid;
-    grid-template-rows: 5fr 5fr 5fr 3fr;
+    grid-template-rows: 5fr 7fr 5fr 3fr;
     overflow-x: hidden;
 }
 #about-us-text {
@@ -52,7 +52,6 @@
 }
 #index-mobile-gallery {
     grid-row: 2/3;
-    background-color: aqua;
 }
 #index-reviews {
     grid-row: 3/4;

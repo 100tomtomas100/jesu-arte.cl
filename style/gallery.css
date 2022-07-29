@@ -43,7 +43,6 @@
     max-width: 50%;
     object-fit: contain; 
 }
-
 .painting-mobile img {
     max-width: 100%;
     object-fit: contain;    
@@ -85,3 +84,4 @@
 .index-mobile-gallery-buttons.next {
     right: 10px;
 }
+
