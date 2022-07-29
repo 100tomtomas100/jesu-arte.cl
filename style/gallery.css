@@ -101,10 +101,12 @@
     border: none;
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 50%;
     visibility: hidden;
     color: rgba(255,255,255, 0.5);
+    
 }
 #close-enlarged-gallery-wrapper:hover,
 #close-enlarged-gallery-wrapper:focus {
@@ -112,7 +114,6 @@
     background-color: rgba(0, 0, 0, 0.4);
 }
 #close-enlarged-gallery {
-    font-family: 'Zapf Dingbats';
     font-weight: 800;
     font-size: calc(20px + 3vw);    
     cursor: pointer;
