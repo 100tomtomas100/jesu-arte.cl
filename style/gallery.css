@@ -112,6 +112,7 @@
     background-color: rgba(0, 0, 0, 0.4);
 }
 #close-enlarged-gallery {
+    font-family: 'Zapf Dingbats';
     font-weight: 800;
     font-size: calc(20px + 3vw);    
     cursor: pointer;
