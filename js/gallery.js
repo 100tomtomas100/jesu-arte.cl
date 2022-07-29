@@ -95,14 +95,25 @@ const gallery = (() => {
                     painting.style.width = "100vw"
                 });
                 mobGal.scrollIntoView();  
-                mobGal.style.backgroundColor = "rgba(32, 108, 167, 0.3)"          
-                
+                mobGal.style.backgroundColor = "rgba(32, 108, 167, 0.3)";          
+                document.getElementById("close-enlarged-gallery-wrapper").style.visibility = "visible";
                 document.getElementById("index-body").style.overflow = "hidden";
-                document.querySelector(".navbar-mobile").style.backgroundColor = ""               
+                document.querySelector(".navbar-mobile").style.visibility = "hidden";               
             })    
         }) 
     })();   
-                
-                 
-    
+    const closeEnlargen = (() => {
+                const close =  document.getElementById("close-enlarged-gallery");
+                close.addEventListener("click", () => {
+                    document.getElementById("close-enlarged-gallery-wrapper").style.visibility = "hidden";
+                    document.getElementById("index-body").style.overflow = "";
+                    document.querySelector(".navbar-mobile").style.visibility = "visible";   
+                    document.getElementById("index-mobile-gallery").style.backgroundColor = "";
+                    document.getElementById("index-mobile-gallery").style.height = ""
+                    document.getElementById("index-mobile-gallery").scrollIntoView();
+                    allPaintings.forEach(painting => {
+                        painting.style.width = ""
+                    });
+                })
+    })();   
 })();

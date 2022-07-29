@@ -1,3 +1,10 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
 /*gallery for index for mobile*/
 .painting-mobile {
     display: none;     
@@ -84,4 +91,30 @@
 .index-mobile-gallery-buttons.next {
     right: 10px;
 }
+#close-enlarged-gallery-wrapper {
+    z-index: 3;
+    width: calc(35px + 3vw);
+    height: calc(35px + 3vw);    
+    position: absolute;    
+    top: 10px;
+    right: 10px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    visibility: hidden;
+    color: rgba(255,255,255, 0.5);
+}
+#close-enlarged-gallery-wrapper:hover,
+#close-enlarged-gallery-wrapper:focus {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+#close-enlarged-gallery {
+    font-weight: 800;
+    font-size: calc(20px + 3vw);    
+    cursor: pointer;
+}
+
 
