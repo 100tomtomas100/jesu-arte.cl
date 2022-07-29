@@ -99,6 +99,9 @@ const gallery = (() => {
                 document.getElementById("close-enlarged-gallery-wrapper").style.visibility = "visible";
                 document.getElementById("index-body").style.overflow = "hidden";
                 document.querySelector(".navbar-mobile").style.visibility = "hidden";               
+                document.getElementById("see-more-mobile-gallery-a").style.color = "rgba(255,255,255, 0.5)";
+                document.getElementById("see-more-mobile-gallery").style.backgroundColor = "rgba(0, 0, 0, 0.2)";
+                
             })    
         }) 
     })();   
@@ -111,6 +114,8 @@ const gallery = (() => {
                     document.getElementById("index-mobile-gallery").style.backgroundColor = "";
                     document.getElementById("index-mobile-gallery").style.height = ""
                     document.getElementById("index-mobile-gallery").scrollIntoView();
+                    document.getElementById("see-more-mobile-gallery-a").style.color = "";
+                document.getElementById("see-more-mobile-gallery").style.backgroundColor = "";
                     allPaintings.forEach(painting => {
                         painting.style.width = ""
                     });
