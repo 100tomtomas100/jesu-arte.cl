@@ -21,7 +21,7 @@
     background-image: url("../img/index-background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: rgb(255, 139, 22);
+    background-color: rgb(213, 215, 218);
     display: grid;
     height: 100%;
     grid-template-rows: 1fr 18fr 3fr;

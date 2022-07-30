@@ -95,8 +95,8 @@ const gallery = (() => {
                     painting.style.width = "100vw"
                 });
                 mobGal.scrollIntoView();  
-                mobGal.style.backgroundColor = "rgba(32, 108, 167, 0.6)";
-                mobGal.style.backgroundImage = "";
+                mobGal.style.backgroundColor = "rgba(32, 108, 167, 0.2)";
+                mobGal.style.backgroundImage = "none";
                 document.getElementById("close-enlarged-gallery-wrapper").style.visibility = "visible";
                 document.getElementById("index-body").style.overflow = "hidden";
                 document.querySelector(".navbar-mobile").style.visibility = "hidden";               
@@ -113,6 +113,7 @@ const gallery = (() => {
                     document.getElementById("index-body").style.overflow = "";
                     document.querySelector(".navbar-mobile").style.visibility = "visible";   
                     document.getElementById("index-mobile-gallery").style.backgroundColor = "";
+                    document.getElementById("index-mobile-gallery").style.backgroundImage = "";
                     document.getElementById("index-mobile-gallery").style.height = ""
                     document.getElementById("index-mobile-gallery").scrollIntoView();
                     document.getElementById("see-more-mobile-gallery-a").style.color = "";
