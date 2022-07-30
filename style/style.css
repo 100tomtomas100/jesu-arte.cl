@@ -38,13 +38,13 @@
 }
 #about-us-text {
     height: 100%;
-    padding-top: 30%;
+    padding-top: 40%;
     grid-row: 1/2;
     display: flex;
     align-items: center;
 }
 #about-us-text p {   
-    width: 50vw;
+    width: 80vw;
     font-size: calc(5px + 2vw);
     display: flex;
     text-align: center;
@@ -58,11 +58,11 @@
 }
 #index-reviews {
     grid-row: 3/4;
-    background-color:bisque;
+   
 }
 #index-social-media {
     grid-row: 4/5;
-    background-color: aqua;
+   
 }
 /*responsive screen sizes*/
 @media (max-width: 480px) {
