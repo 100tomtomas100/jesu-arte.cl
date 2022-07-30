@@ -95,7 +95,7 @@ const gallery = (() => {
                     painting.style.width = "100vw"
                 });
                 mobGal.scrollIntoView();  
-                mobGal.style.backgroundColor = "rgba(32, 108, 167, 0.3)";          
+                mobGal.style.backgroundColor = "rgba(32, 108, 167, 0.6)";          
                 document.getElementById("close-enlarged-gallery-wrapper").style.visibility = "visible";
                 document.getElementById("index-body").style.overflow = "hidden";
                 document.querySelector(".navbar-mobile").style.visibility = "hidden";               
