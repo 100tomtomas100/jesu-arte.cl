@@ -33,7 +33,7 @@
 /*index content*/
 #content {
     display: grid;
-    grid-template-rows: 5fr 7fr 5fr 3fr;
+    grid-template-rows: 5fr 4.5fr 5fr 3fr;
     overflow-x: hidden;
 }
 #about-us-text {
@@ -45,7 +45,7 @@
 }
 #about-us-text p {   
     width: 80vw;
-    font-size: calc(5px + 2vw);
+    font-size: calc(7px + 2vw);
     display: flex;
     text-align: center;
     background-color: #F0ECEC;
@@ -54,6 +54,7 @@
 }
 #index-mobile-gallery {
     grid-row: 2/3;
+    background-image: url("../img/fire.jpg");
 
 }
 #index-reviews {
