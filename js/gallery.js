@@ -109,14 +109,15 @@ const gallery = (() => {
     const closeEnlargen = (() => {
                 const close =  document.getElementById("close-enlarged-gallery");
                 close.addEventListener("click", () => {
+                    const mobGal = document.getElementById("index-mobile-gallery");
                     document.getElementById("close-enlarged-gallery-wrapper").style.visibility = "hidden";
                     document.getElementById("index-body").style.overflow = "";
                     document.querySelector(".navbar-mobile").style.visibility = "visible";   
-                    document.getElementById("index-mobile-gallery").style.backgroundColor = "";
-                    document.getElementById("index-mobile-gallery").style.backgroundImage = "";
-                    document.getElementById("index-mobile-gallery").style.height = ""
-                    document.getElementById("index-mobile-gallery").scrollIntoView();
-                    document.getElementById("see-more-mobile-gallery-a").style.color = "";
+                    mobGal.style.backgroundColor = "";
+                    mobGal.style.backgroundImage = "";
+                    mobGal.style.height = ""
+                    mobGal.scrollIntoView();
+                    mobGal.style.color = "";
                 document.getElementById("see-more-mobile-gallery").style.backgroundColor = "";
                     allPaintings.forEach(painting => {
                         painting.style.width = ""
