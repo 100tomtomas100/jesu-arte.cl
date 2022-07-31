@@ -33,7 +33,7 @@
 /*index content*/
 #content {
     display: grid;
-    grid-template-rows: 5fr 4.5fr 5fr 3fr;
+    grid-template-rows: 5fr 5.5fr 5fr 3fr;
     overflow-x: hidden;
 }
 #about-us-text {
