@@ -10,7 +10,7 @@ const expandText = (() => {
         textColumn2.classList.toggle("open");
         textColumn2.appendChild(toggler);
     if (textColumn2.classList != "open") {
-        textColumn.appendChild(toggler);
+        textColumn.appendChild(toggler);        
     }
     })
 

@@ -21,7 +21,7 @@
     background-image: url("../img/index-background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: rgb(213, 215, 218);
+    background-color: #FFFFFF;
     display: grid;
     height: 100%;
     grid-template-rows: 1fr 18fr 3fr;
@@ -80,12 +80,13 @@
 }
 #index-mobile-gallery {
     grid-row: 2/3;
-    background-image: url("../img/fire.jpg");
+    /*background-image: url("../img/fire.jpg");*/
+    background-color: linear-gradient(down,white, white);
 
 }
 #index-reviews {
     grid-row: 3/4;
-    background-image: url("../img/background3.jpg");
+   /* background-image: url("../img/background3.jpg");*/
     background-size: cover;
    
 }
