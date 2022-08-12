@@ -83,6 +83,7 @@
 }
 #index-mobile-gallery {
     grid-row: 2/3;
+    background-color: black;
     /*background-image: url("../img/fire.jpg");*/
     /*background-color:linear-gradient(down,white, white);*/
 }
