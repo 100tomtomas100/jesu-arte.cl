@@ -63,7 +63,8 @@
 #index-mobile-gallery ul li {
     width: 80%;
 }
-.index-mobile-gallery-buttons {
+.index-mobile-gallery-buttons.next,
+.index-mobile-gallery-buttons.prev  {
     max-width: 100px;
     position: absolute;
     font-size: 40px;
