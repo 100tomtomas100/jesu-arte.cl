@@ -101,6 +101,7 @@ const gallery = (() => {
                 document.getElementById("index-body").style.overflow = "hidden";
                 document.querySelector(".navbar-mobile").style.visibility = "hidden";               
                 document.getElementById("see-more-mobile-gallery-a").style.color = "rgba(255,255,255, 0.5)";
+                document.getElementById("see-more-mobile-gallery").style.display = "block";
                 document.getElementById("see-more-mobile-gallery").style.backgroundColor = "rgba(0, 0, 0, 0.2)";
                 document.getElementById("index-body").style.backgroundImage = "none";
             })    
@@ -115,6 +116,7 @@ const gallery = (() => {
                     document.querySelector(".navbar-mobile").style.visibility = "visible";   
                     document.getElementById("index-body").style.backgroundImage = "";
                     document.getElementById("see-more-mobile-gallery-a").style.color = "";
+                    document.getElementById("see-more-mobile-gallery").style.display = "";
                     mobGal.style.backgroundColor = "";
                     mobGal.style.backgroundImage = "";
                     mobGal.style.height = ""
