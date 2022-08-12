@@ -2,7 +2,6 @@
 .footer-mobile {
     grid-row: 3/4;
     background-color: #F0ECEC;
-    opacity: 0.8;    
     font-family: "Proxima-Soft";
     display: grid;
     grid-template-rows: 2fr 3fr;
