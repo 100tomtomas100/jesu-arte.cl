@@ -18,7 +18,7 @@
 }
 /*index-body*/
 #index-body {
-    background-image: url("../img/index-background.jpg");
+    background-image: url("../img/index-background.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-color: #FFFFFF;
@@ -38,7 +38,7 @@
 }
 #about-us-text {
     height: 100%;
-    padding-top: 30%;
+    padding-top: 50%;
     grid-row: 1/2;
     display: grid;
     align-items: flex-start;
