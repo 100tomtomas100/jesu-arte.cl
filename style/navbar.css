@@ -69,14 +69,14 @@
     justify-content: flex-end;
 }
 #languages-mobile a img {
-    max-width: calc(20px + 20%);
+    max-width: calc(30px + 20%);
 }
 #burger-menu {
     grid-area: 1/2/2/3;
     margin-right: 7px;
     display: flex;
     justify-content: flex-end;
-    font-size: calc(20px + 1.5vw); 
+    font-size: calc(30px + 1.5vw); 
     color: black;   
 }
 #navbar-mobile-buttons {
