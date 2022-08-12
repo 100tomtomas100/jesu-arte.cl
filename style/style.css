@@ -24,7 +24,7 @@
     background-color: #F0ECEC;
     display: grid;
     height: 100%;
-    grid-template-rows: 1fr 23fr 3fr;
+    grid-template-rows: 1fr 22fr 3fr;
 }
 #index-body image {
     max-width: 100%;
@@ -33,7 +33,7 @@
 /*index content*/
 #content {
     display: grid;
-    grid-template-rows: 7fr 7fr 6fr 7fr;
+    grid-template-rows: 7fr 7fr 6fr 9fr;
     overflow-x: hidden;
 }
 #about-us-text {
@@ -107,10 +107,13 @@
 #index-reviews {
     grid-row: 4/5;  
     background-color: white; 
+    display: flex;
+    justify-content: center;
     
 }
 #index-reviews img{
-    width: 100%;
+    width: 90%;
+    object-fit: contain;
 }
 
 /*responsive screen sizes*/
