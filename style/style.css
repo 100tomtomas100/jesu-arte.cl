@@ -24,7 +24,7 @@
     background-color: #F0ECEC;
     display: grid;
     height: 100%;
-    grid-template-rows: 1fr 22fr 3fr;
+    grid-template-rows: 1fr 23fr 3fr;
 }
 #index-body image {
     max-width: 100%;
