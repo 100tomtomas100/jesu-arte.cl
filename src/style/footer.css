@@ -1,0 +1,65 @@
+/*footer mobile*/
+.footer-mobile {
+    grid-row: 3/4;
+    background-color: #F0ECEC;
+    font-family: "Proxima-Soft";
+    display: grid;
+    grid-template-rows: 2fr 3fr;
+    padding-left: calc(10px + 1vw);
+}
+#footer-credits {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;    
+}
+#designed-by {
+    display: flex;
+    align-items: flex-end;
+}
+#tomas {
+    display: flex;
+    align-items: center;
+}
+#year {
+    display:flex;
+    align-items: center;
+}
+#footer-cooperation {
+    display: grid;
+    grid-template-rows: 1.5fr 2.5fr;
+}
+#marcia {
+    display: flex;
+    align-items: center;     
+}
+#marcia a {    
+    color: black;   
+}
+.footer-mobile h6 {
+    font-size: calc(9px + 1vw);
+    color: #B6B6B6;
+}
+.footer-mobile h5 {
+    font-size: calc(10px + 1vw);
+    color: #B6B6B6;
+}
+.footer-mobile h4 {
+    font-size: calc(12px + 1vw);
+}
+.footer-mobile h2{
+    font-size: calc(14px + 1vw);
+}
+#footer-socialize {
+    display: grid;
+}
+#footer-socialize a {
+    text-decoration: none;
+    color: black;
+}
+#social-links {
+    display: flex;
+    justify-content: space-around;
+}
+#social-links img {
+    width: calc(35px + 6vw);
+
+}
