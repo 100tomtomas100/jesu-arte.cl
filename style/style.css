@@ -24,7 +24,7 @@
     background-color: #F0ECEC;
     display: grid;
     height: 100%;
-    grid-template-rows: 1fr 23fr 3fr;
+    grid-template-rows: 1fr 25fr 3fr;
 }
 #index-body image {
     max-width: 100%;
@@ -33,7 +33,7 @@
 /*index content*/
 #content {
     display: grid;
-    grid-template-rows: 7fr 7.5fr 6fr 9fr;
+    grid-template-rows: 7fr 7.5fr 8fr 9fr;
     overflow-x: hidden;
 }
 #about-us-text {
@@ -148,6 +148,7 @@
         padding-top: 15%;
         padding-left: 10%;
         font-family: "Josefin Sans";
+        font-weight: 300;
       
     }
     .toggler {
