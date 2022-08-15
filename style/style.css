@@ -33,7 +33,7 @@
 /*index content*/
 #content {
     display: grid;
-    grid-template-rows: 7fr 7fr 6fr 9fr;
+    grid-template-rows: 7fr 7.5fr 6fr 9fr;
     overflow-x: hidden;
 }
 #about-us-text {
@@ -45,14 +45,14 @@
     background-image: url(../img/DSC01326-min.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    font-size: calc(7px + 2vw);
 }
 #about-us-text-wrapper p {
     display: grid;
     justify-items: center;
 }
 #about-us-text-wrapper {
-    width: 80vw;
-    font-size: calc(7px + 2vw);
+    width: 80vw;    
     display: grid;
     text-align: center;
     background-color: #F0ECEC;
@@ -83,7 +83,7 @@
 }
 #index-mobile-gallery {
     grid-row: 2/3;
-    background-color: black;
+    background-color: #F0ECEC;
     /*background-image: url("../img/fire.jpg");*/
     /*background-color:linear-gradient(down,white, white);*/
 }
@@ -121,14 +121,37 @@
     .navbar {
         display: none;
     }
-    #index-body{
-        background-size: 480px auto;
-        background-repeat: no-repeat;
+}
+@media (min-width: 769px) {
+    .navbar-mobile{
+        display: none;
     }
+    
 }
 @media (min-width: 481px) {
     .navbar-mobile{
         display: none;
+    }
+    #index-body {
+        grid-template-rows: 0.85fr 23fr 2fr;
+    }
+    #about-us-text-p, about-us-text-p2 {
+        
+        text-justify: inter-word;
+    }
+    #about-us-text-wrapper{
+        padding: 15px;       
+        text-align:center;
+    }
+    #about-us-text {
+        font-size: calc(7px + 1.5vw);
+        padding-top: 15%;
+        padding-left: 10%;
+        font-family: "Josefin Sans";
+      
+    }
+    .toggler {
+        font-size: calc(9px + 2vw);
     }
     
 }
