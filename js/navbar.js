@@ -28,5 +28,6 @@ window.onscroll = () => {
   if (window.scrollY > 0 && document.getElementById("navbar-mobile-buttons").style.display === "") {
       document.getElementById("navbar-mobile-buttons").style.display = "none";
   }
+  
 };
 })();

@@ -3,13 +3,14 @@
     margin: 0;
     box-sizing: border-box;
 }
-/*gallery for index for mobile*/
+/*gallery for index for mobile and tablet*/
 .painting-mobile {
     display: none;     
 }
 .painting-mobile[data-active="main"] {
     z-index: 2;
-    display: block;
+    display: flex;
+    justify-content: center;
     position: absolute;
     opacity: 1;
     left: 50%;
@@ -62,6 +63,7 @@
 }
 #index-mobile-gallery ul li {
     width: 80%;
+   
 }
 .index-mobile-gallery-buttons {
     max-width: 100px;
@@ -141,4 +143,18 @@
     color: black;
 }
 
+@media (min-width: 481px) and (max-width: 768px) {
+    .painting-mobile[data-active="main"] img {
+        height: 85vh;
+    }
+    .painting-mobile[data-active="next"] img  {
+        max-width: 40%;
+    }
+    .painting-mobile[data-active="prev"] img {
+        max-width: 40%;
+    }
+    .painting-mobile[data-active="prev"] {
+    transform: translate(-90%, -50%)
+    }
+}
 

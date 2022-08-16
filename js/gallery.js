@@ -2,10 +2,11 @@
 const gallery = (() => {
     const buttons = document.querySelectorAll("[data-mobile-gallery-button]");
     const allPaintings = document.querySelectorAll("[data-active]");
+    let enlargened = false;
     buttons.forEach(button => {        
         button.addEventListener("click", () => {
             let counter = button.dataset.mobileGalleryButton === "next" ? 1 : -1;            
-            mainPainting = (() => {
+            let mainPainting = (() => {
                 for (let i = 0; allPaintings.length > i; i++) {
                     if ([...allPaintings][i].dataset.active === "main" && allPaintings.length -1 != i
                         && counter === 1) {                          
@@ -84,26 +85,55 @@ const gallery = (() => {
                 [...allPaintings][prevPainting].dataset.active = "prev";                                          
                 [...allPaintings][delPainting].dataset.active = "";                
             })();   
+            // screen size 480 - 768            
+                let prevPicture = document.querySelector("[data-active='prev']");
+                let nextPicture = document.querySelector("[data-active='next']");
+                let mainPicture = document.querySelector("[data-active='main']");
+            if (window.innerWidth > 480 && window.innerWidth < 769 && enlargened === true){    
+                mainPicture.style.visibility = "visible"
+                prevPicture.style.visibility = "hidden";
+                nextPicture.style.visibility = "hidden";                    
+            } else if (enlargened === false) {
+                mainPicture.style.visibility = "visible"
+                prevPicture.style.visibility = "visible";
+                nextPicture.style.visibility = "visible"; 
+            } else if (window.innerWidth <= 480) {
+                prevPicture.style.visibility = "visible";
+                nextPicture.style.visibility = "visible";     
+            }
         });
     });
     const enlargen = (() => {        
         allPaintings.forEach(painting => {
             painting.addEventListener("click", () => {
+                enlargened = true;
                 const mobGal = document.getElementById("index-mobile-gallery");              
                 mobGal.style.height = "100vh";
                 allPaintings.forEach(painting => {
                     painting.style.width = "100vw"
-                });
+                }); 
+                document.getElementById("index-body").style.overflow = "hidden";
                 mobGal.scrollIntoView();  
                 mobGal.style.backgroundColor = "rgba(32, 108, 167, 0.2)";
                 mobGal.style.backgroundImage = "none";
                 document.getElementById("close-enlarged-gallery-wrapper").style.visibility = "visible";
-                document.getElementById("index-body").style.overflow = "hidden";
+               
                 document.querySelector(".navbar-mobile").style.visibility = "hidden";               
                 document.getElementById("see-more-mobile-gallery-a").style.color = "rgba(255,255,255, 0.5)";
                 document.getElementById("see-more-mobile-gallery").style.display = "block";
                 document.getElementById("see-more-mobile-gallery").style.backgroundColor = "rgba(0, 0, 0, 0.2)";
-                document.getElementById("index-body").style.backgroundImage = "none";
+                document.getElementById("index-body").style.backgroundImage = "none"; 
+               
+                if (window.innerWidth > 480 && window.innerWidth < 769){
+                    document.querySelector(".navbar").style.visibility = "hidden";
+                    let prevPicture = document.querySelector("[data-active='prev']");
+                    let nextPicture = document.querySelector("[data-active='next']");
+                    prevPicture.style.visibility = "hidden";
+                    nextPicture.style.visibility = "hidden";   
+                    allPaintings.forEach(painting => {
+                        painting.style.height= "100vh"
+                    });                  
+                }
             })    
         }) 
     })();   
@@ -125,7 +155,16 @@ const gallery = (() => {
                 document.getElementById("see-more-mobile-gallery").style.backgroundColor = "";
                     allPaintings.forEach(painting => {
                         painting.style.width = ""
+                        painting.style.height = ""
                     });
+                    if (window.innerWidth > 480 && window.innerWidth < 769){
+                        document.querySelector(".navbar").style.visibility = "visible";
+                        let prevPicture = document.querySelector("[data-active='prev']");
+                        let nextPicture = document.querySelector("[data-active='next']");
+                        prevPicture.style.visibility = "visible";
+                        nextPicture.style.visibility = "visible";                        
+                    }
+                    enlargened = false;
                 })
     })();   
 })();
