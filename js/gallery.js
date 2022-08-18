@@ -3,15 +3,10 @@ const gallery = (() => {
     // gallery for mobile and tablet
     const buttons = document.querySelectorAll("[data-mobile-gallery-button]");
     const allPaintings = document.querySelectorAll("[data-active]");
-    let enlargened = false;
-    lockScreen = (() => {
-        let screenOrientation = window.screen.orientation;
-        if (enlargened === true) {            
-            screenOrientation.lock("portrait");
-        } else {
-            screenOrientation.unlock();
-        }
-    })();
+    let enlargened = false;    
+    let screenOrientation = window.screen.orientation;
+        
+   
     buttons.forEach(button => {        
         button.addEventListener("click", () => {
             let counter = button.dataset.mobileGalleryButton === "next" ? 1 : -1;            
@@ -132,7 +127,7 @@ const gallery = (() => {
                 document.getElementById("see-more-mobile-gallery").style.display = "block";
                 document.getElementById("see-more-mobile-gallery").style.backgroundColor = "rgba(0, 0, 0, 0.2)";
                 document.getElementById("index-body").style.backgroundImage = "none"; 
-               
+                screenOrientation.lock("portrait");
                 if (window.innerWidth > 480 && window.innerWidth < 769){
                     document.querySelector(".navbar").style.visibility = "hidden";
                     let prevPicture = document.querySelector("[data-active='prev']");
@@ -161,6 +156,7 @@ const gallery = (() => {
                     mobGal.style.height = ""
                     mobGal.scrollIntoView();
                     mobGal.style.color = "";
+                    screenOrientation.unlock();
                 document.getElementById("see-more-mobile-gallery").style.backgroundColor = "";
                     allPaintings.forEach(painting => {
                         painting.style.width = ""
@@ -187,7 +183,6 @@ const gallery = (() => {
     // enlarge
     allPaintings768.forEach(painting => {
         painting.addEventListener("click", () => {
-            enlargened = true;
             mainPaintingLarge = painting;
             mainPaintingLarge.dataset.active = "main";
             large.style.display = "block";
@@ -265,7 +260,6 @@ const gallery = (() => {
             gallery768.style.position = "";
             gallery768.style.backgroundColor = "";
             document.getElementById("index-body").style.backgroundImage = "";
-            enlargened = false;
     }
     makeSmallerButton.addEventListener("click", () => {
         minimize ()
