@@ -124,4 +124,19 @@
     list-style: none;
     color: black;
 }
-
+@media (min-width: 769px) {
+  .navbar {
+    height: calc(12px + 8.5vw);
+    background-color: rgb(234, 242, 248, 0.8);
+  }
+  #languages a img {
+    width: calc(25px + 1.5vw);
+  }
+  #languages {
+  align-items: flex-start;
+  }
+  #navbar-buttons div a img {    
+    object-fit: contain;
+    max-width: calc(25px + 55%);
+}
+}

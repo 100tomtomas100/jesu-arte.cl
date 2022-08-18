@@ -1,8 +1,17 @@
-// gallery 
+
 const gallery = (() => {
+    // gallery for mobile and tablet
     const buttons = document.querySelectorAll("[data-mobile-gallery-button]");
     const allPaintings = document.querySelectorAll("[data-active]");
     let enlargened = false;
+    lockScreen = (() => {
+        let screenOrientation = window.screen.orientation;
+        if (enlargened === true) {            
+            screenOrientation.lock("portrait");
+        } else {
+            screenOrientation.unlock();
+        }
+    })();
     buttons.forEach(button => {        
         button.addEventListener("click", () => {
             let counter = button.dataset.mobileGalleryButton === "next" ? 1 : -1;            
@@ -166,5 +175,102 @@ const gallery = (() => {
                     }
                     enlargened = false;
                 })
-    })();   
+    })(); 
+    //gallery for screen wider than 768px
+    const allPaintings768 = document.querySelectorAll(".size768");
+    const gallery768 = document.getElementById("index-gallery");
+    const sliderGallery = document.querySelector(".slider-gallery");
+    const largeImg = document.getElementById("large-img");   
+    const large = document.getElementById("large");
+    const buttonsPrevNext = document.querySelectorAll(".index-gallery-buttons")
+    let mainPaintingLarge;
+    // enlarge
+    allPaintings768.forEach(painting => {
+        painting.addEventListener("click", () => {
+            enlargened = true;
+            mainPaintingLarge = painting;
+            mainPaintingLarge.dataset.active = "main";
+            large.style.display = "block";
+            sliderGallery.style.display = "none";
+            document.querySelector(".navbar").style.visibility = "hidden";
+            gallery768.style.height = "100vh";           
+            largeImg.src = painting.src;
+            document.getElementById("index-body").style.overflow = "hidden";
+            gallery768.scrollIntoView();
+            gallery768.style.position = "relative";
+            gallery768.style.backgroundColor = "rgba(32, 108, 167, 0.8)";
+            document.getElementById("index-body").style.backgroundImage = "none";
+        })
+    })
+    // next picture previous picture
+    buttonsPrevNext.forEach(button => {
+        button.addEventListener("click", () => {          
+            let mainPainting = (() => {
+                for (let i = 0; allPaintings768.length > i; i++) {
+                    if([...allPaintings768][i].dataset.active === "main"){
+                        return i;               
+                    }
+                } 
+            })();
+            let paintingForward = (() => {
+                let forward = (jumptofront) => {
+                    if(jumptofront === 0) {
+                        [...allPaintings768][[...allPaintings768].length - 1].dataset.active = "";
+                        [...allPaintings768][jumptofront].dataset.active = "main";
+                        largeImg.src = [...allPaintings768][jumptofront].src;
+                    } else {
+                        [...allPaintings768][mainPainting].dataset.active = "";
+                        [...allPaintings768][mainPainting + 1].dataset.active = "main";
+                        largeImg.src = [...allPaintings768][mainPainting + 1].src;
+                    }
+                }
+                if (button.dataset.galleryButton === "next" && [...allPaintings768].length - 1 > mainPainting){                
+                    forward();
+                } else if (button.dataset.galleryButton === "next" && [...allPaintings768].length - 1 === mainPainting) {
+                    forward(0);
+                } 
+            })();
+            let paintingBackwards = (() => {
+                let backwards = (jumptoback) => {
+                    if(jumptoback === 7) {
+                        [...allPaintings768][0].dataset.active = "";
+                        [...allPaintings768][jumptoback].dataset.active = "main";
+                        largeImg.src = [...allPaintings768][jumptoback].src;
+                    } else {
+                        [...allPaintings768][mainPainting].dataset.active = "";
+                        [...allPaintings768][mainPainting - 1].dataset.active = "main";
+                        largeImg.src = [...allPaintings768][mainPainting - 1].src;
+                    }
+                }
+                if (button.dataset.galleryButton === "prev" && mainPainting != 0){                
+                    backwards();
+                } else if (button.dataset.galleryButton === "prev" && mainPainting === 0) {
+                    backwards(7);
+                } 
+            })();
+          
+        })
+       
+    }) 
+    //close enlarged gallery
+    const makeSmallerButton = document.getElementById("close-enlarged-gallery-wrapper-large");
+    minimize = () => {
+            mainPaintingLarge.dataset.active = "";
+            large.style.display = "";
+            sliderGallery.style.display = "";
+            document.querySelector(".navbar").style.visibility = "visible";
+            gallery768.style.height = "";           
+            document.getElementById("index-body").style.overflow = "";
+            gallery768.scrollIntoView();
+            gallery768.style.position = "";
+            gallery768.style.backgroundColor = "";
+            document.getElementById("index-body").style.backgroundImage = "";
+            enlargened = false;
+    }
+    makeSmallerButton.addEventListener("click", () => {
+        minimize ()
+    })
+
+    
 })();
+ 

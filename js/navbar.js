@@ -17,17 +17,14 @@ const navbarBackground = (() => {
   const navbarMobil = document.querySelector('.navbar-mobile');
   const navbar = document.querySelector('.navbar');
 window.onscroll = () => {
-  if (window.scrollY > 100) {
-      navbar.style.background = "rgb(234, 242, 248, 0.5)";
+  if (window.scrollY > 0 && window.innerWidth <= 768) {
+      navbar.style.background = "rgb(234, 242, 248, 0.8)";
       navbarMobil.style.background = "rgb(234, 242, 248, 0.5)";
-  } else {
-      navbar.style.backgroundColor = "transparent";
-      navbarMobil.style.backgroundColor = "transparent";
-  }
+  } 
   //navbar to close on scrolling
-  if (window.scrollY > 0 && document.getElementById("navbar-mobile-buttons").style.display === "") {
+  if (window.scrollY > 0 && document.getElementById("navbar-mobile-buttons").style.display != "none"
+    && window.innerWidth < 481) {
       document.getElementById("navbar-mobile-buttons").style.display = "none";
-  }
-  
+  }  
 };
 })();

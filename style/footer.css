@@ -63,3 +63,22 @@
     width: calc(35px + 6vw);
 
 }
+@media (min-width: 769px) {
+    .footer-mobile {     
+        grid-template-rows: 1fr 1fr;
+    }
+    .footer-mobile h6 {
+        font-size: calc(9px + 0.5vw);
+        color: #B6B6B6;
+    }
+    .footer-mobile h5 {
+        font-size: calc(10px + 0.5vw);
+        color: #B6B6B6;
+    }
+    .footer-mobile h4 {
+        font-size: calc(12px + 0.5vw);
+    }
+    .footer-mobile h2{
+        font-size: calc(14px + 0.5vw);
+    }
+}
