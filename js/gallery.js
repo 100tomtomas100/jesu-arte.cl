@@ -188,7 +188,7 @@ const gallery = (() => {
                     
                 })
                 allImg.forEach(img => {
-                    img.style.width = "100%";
+                    img.style.width = "100vh";
                     img.style.objectFit = "contain";
                 })
             }
