@@ -170,6 +170,7 @@ const gallery = (() => {
     let lockScreen = (() => {
         const mediaQuery = window.matchMedia('(orientation: landscape)');
         const gallery = document.querySelector("#index-mobile-gallery");
+        const allImg = document.querySelectorAll(".painting-mobile-img")
         function tilt(e) {
             if (e.matches && enlargened === true) {
                 document.querySelector(".navbar").style.display = "none";
@@ -185,7 +186,10 @@ const gallery = (() => {
                 allPaintings.forEach(painting => {
                     painting.style.width = "100vw";
                     
-                    painting.style.objectFit = "contain";
+                })
+                allImg.forEach(img => {
+                    img.style.width = "100%";
+                    img.style.objectFit = "contain";
                 })
             }
         }
