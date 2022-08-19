@@ -167,6 +167,25 @@ const gallery = (() => {
                     enlargened = false;
                 })
     })(); 
+    let lockScreen = (() => {
+        const mediaQuery = window.matchMedia('(max-width: 768px) and (orientation: landscape)');
+        const gallery = document.querySelector("#index-mobile-gallery");
+        function tilt(e) {
+            if (e.matches && enlargened === true) {
+                gallery.style.transform = "rotate(-90deg)";
+                gallery.style.transformOrigin = "left top";
+                gallery.style.width = "100vh";
+                gallery.style.overflowX = "hidden";
+                gallery.style.position = "absolute";
+                gallery.style.top = "100%";
+                gallery.style.left = "0%";
+            }
+        }
+        mediaQuery.addListener(tilt)
+        tilt(mediaQuery)
+        
+
+    })();
     //gallery for screen wider than 768px
     const allPaintings768 = document.querySelectorAll(".size768");
     const gallery768 = document.getElementById("index-gallery");
@@ -190,6 +209,7 @@ const gallery = (() => {
             gallery768.style.position = "relative";
             gallery768.style.backgroundColor = "rgba(32, 108, 167, 0.8)";
             document.getElementById("index-body").style.backgroundImage = "none";
+            enlargened = true;
         })
     })
     // next picture previous picture
@@ -255,6 +275,7 @@ const gallery = (() => {
             gallery768.style.position = "";
             gallery768.style.backgroundColor = "";
             document.getElementById("index-body").style.backgroundImage = "";
+            enlargened = false;
     }
     makeSmallerButton.addEventListener("click", () => {
         minimize ()
