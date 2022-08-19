@@ -183,8 +183,8 @@ const gallery = (() => {
                 gallery.style.overflow = "hidden";
                 gallery.scrollIntoView()
                 allPaintings.forEach(painting => {
-                    painting.width = "100%";
-                    painting.height = "100%"
+                    painting.width = "100vh";
+                    painting.height = "100vw";
                 })
             }
         }
