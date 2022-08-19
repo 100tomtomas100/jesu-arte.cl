@@ -107,20 +107,23 @@
     object-fit: contain;
     
 }
-#index-reviews {
+#index-reviews-mobile {
     grid-row: 4/5;  
     background-color: white; 
     display: flex;
     justify-content: center;
     
 }
-#index-reviews img{
+#index-reviews-mobile img{
     width: 90%;
     object-fit: contain;
 }
 
 /*responsive screen sizes*/
 @media (max-width: 480px) {
+    #index-reviews-desktop {
+        display: none;
+    }
     .navbar {
         display: none;
     }
@@ -129,6 +132,9 @@
     }
 }
 @media (min-width: 481px) and (max-width: 768px) {
+    #index-reviews-desktop {
+        display: none;
+    }
     #index-gallery {
         display: none;
     }
@@ -163,7 +169,7 @@
         padding-top: calc(10px + 4%);
         padding-right: calc(10px + 4%);
      }
-     #index-reviews  img { 
+     #index-reviews-mobile  img { 
         width: 75%;
     }    
 }
@@ -207,7 +213,7 @@
         background-size: contain;
         background-repeat: no-repeat;
     }
-    #index-reviews  img { 
+    #index-reviews-mobile  {
         display: none;
     }   
     .social-img img {
