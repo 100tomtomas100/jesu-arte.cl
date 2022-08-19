@@ -189,7 +189,7 @@
         background-color: #F0ECEC;
     }
     #content {
-        grid-template-rows: 1.5fr 2fr 2.5fr 2fr;
+        grid-template-rows: 1.5fr 2fr 2.3fr 2fr;
     }
     #about-us-text {
     padding-top: 3%;
@@ -216,6 +216,9 @@
     #index-reviews-mobile  {
         display: none;
     }   
+    #index-reviews-desktop img {
+        object-fit: contain;
+    }
     .social-img img {
         max-width: 9vw; 
      }
