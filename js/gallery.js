@@ -182,6 +182,10 @@ const gallery = (() => {
                 gallery.style.left = "0%";
                 gallery.style.overflow = "hidden";
                 gallery.scrollIntoView()
+                allPaintings.forEach(painting => {
+                    painting.width = "100%";
+                    painting.height = "100%"
+                })
             }
         }
         mediaQuery.addListener(tilt)
