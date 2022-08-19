@@ -1,5 +1,3 @@
-
-
 const gallery = (() => {
     // gallery for mobile and tablet
     const buttons = document.querySelectorAll("[data-mobile-gallery-button]");
@@ -168,6 +166,7 @@ const gallery = (() => {
                     enlargened = false;
                 })
     })(); 
+    // lock screen on tilt when gallery is enlargened
     let lockScreen = (() => {
         const mediaQuery = window.matchMedia('(max-width: 768px) and (orientation: landscape)');
         const gallery = document.querySelector("#index-mobile-gallery");
@@ -184,8 +183,8 @@ const gallery = (() => {
                 gallery.style.overflow = "hidden";
                 gallery.scrollIntoView()
                 allPaintings.forEach(painting => {
-                    painting.style.width = "100vh";
-                    painting.style.height = "100vw";
+                    painting.style.width = "100vw";
+                    painting.style.height = "100vh";
                     painting.style.objectFit = "contain";
                 })
             }
