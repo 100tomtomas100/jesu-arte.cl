@@ -174,15 +174,22 @@ const gallery = (() => {
         function tilt(e) {
             if (e.matches && enlargened === true) {
                 document.querySelector(".navbar").style.display = "none";
-                gallery.style.transform = "rotate(-90deg)";
+                // gallery.style.transform = "rotate(-90deg)";
                 gallery.style.transformOrigin = "left top";
-                gallery.style.width = "100vh"; 
-                gallery.style.height = "100vw"               
+                gallery.style.width = "100vw"; 
+                gallery.style.height = "100vh"               
                 gallery.style.position = "absolute";
                 gallery.style.top = "100%";
                 gallery.style.left = "0%";
                 gallery.style.overflow = "hidden";
                 gallery.scrollIntoView();
+                allPaintings.forEach(painting => {
+                    painting.style.height = "90vh";
+                    if (painting.dataset.active != "main") {
+                        painting.style.visibility = "hidden";
+                    }
+                })
+                document.getElementById("about-us-text").style.backgroundImage = "none";
             }
         }
         mediaQuery.addListener(tilt)
