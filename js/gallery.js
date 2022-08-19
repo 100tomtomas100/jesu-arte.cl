@@ -1,3 +1,4 @@
+const { container } = require("webpack");
 
 const gallery = (() => {
     // gallery for mobile and tablet
@@ -183,8 +184,9 @@ const gallery = (() => {
                 gallery.style.overflow = "hidden";
                 gallery.scrollIntoView()
                 allPaintings.forEach(painting => {
-                    painting.width = "100vh";
-                    painting.height = "100vw";
+                    painting.style.width = "100vh";
+                    painting.style.height = "100vw";
+                    painting.style.objectFit = "contain";
                 })
             }
         }
