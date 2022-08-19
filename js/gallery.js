@@ -1,4 +1,4 @@
-const { container } = require("webpack");
+
 
 const gallery = (() => {
     // gallery for mobile and tablet
