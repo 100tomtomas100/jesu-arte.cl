@@ -168,7 +168,7 @@ const gallery = (() => {
     })(); 
     // lock screen on tilt when gallery is enlargened
     let lockScreen = (() => {
-        const mediaQuery = window.matchMedia('(max-width: 768px) and (orientation: landscape)');
+        const mediaQuery = window.matchMedia('(orientation: landscape)');
         const gallery = document.querySelector("#index-mobile-gallery");
         function tilt(e) {
             if (e.matches && enlargened === true) {
