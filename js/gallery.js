@@ -174,7 +174,8 @@ const gallery = (() => {
             if (e.matches && enlargened === true) {
                 gallery.style.transform = "rotate(-90deg)";
                 gallery.style.transformOrigin = "left top";
-                gallery.style.width = "100vh";                
+                gallery.style.width = "100vw"; 
+                gallery.style.height = "100vh"               
                 gallery.style.position = "absolute";
                 gallery.style.top = "100%";
                 gallery.style.left = "0%";
