@@ -172,6 +172,7 @@ const gallery = (() => {
         const gallery = document.querySelector("#index-mobile-gallery");
         function tilt(e) {
             if (e.matches && enlargened === true) {
+                document.querySelector(".navbar").style.display = "none";
                 gallery.style.transform = "rotate(-90deg)";
                 gallery.style.transformOrigin = "left top";
                 gallery.style.width = "100vw"; 
