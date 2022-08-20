@@ -138,8 +138,11 @@ const gallery = (() => {
     })();   
     const closeEnlargen = (() => {
                 const close =  document.getElementById("close-enlarged-gallery");
+                const mobGal = document.getElementById("index-mobile-gallery");
                 close.addEventListener("click", () => {
-                    const mobGal = document.getElementById("index-mobile-gallery");
+                    closeFun();                    
+                })        
+                const closeFun = () => {
                     document.getElementById("close-enlarged-gallery-wrapper").style.visibility = "hidden";
                     document.getElementById("index-body").style.overflow = "";
                     document.querySelector(".navbar-mobile").style.visibility = "visible";   
@@ -151,7 +154,7 @@ const gallery = (() => {
                     mobGal.style.height = ""
                     mobGal.scrollIntoView();
                     mobGal.style.color = "";
-                document.getElementById("see-more-mobile-gallery").style.backgroundColor = "";
+                    document.getElementById("see-more-mobile-gallery").style.backgroundColor = "";
                     allPaintings.forEach(painting => {
                         painting.style.width = ""
                         painting.style.height = ""
@@ -164,47 +167,80 @@ const gallery = (() => {
                         nextPicture.style.visibility = "visible";                        
                     }
                     enlargened = false;
-                })
+                }   
+                return {closeFun}     
     })(); 
-    //tilt gallery when rotating screen with enlargened gallery
-    let lockScreen = (() => {
-        const mediaQuery = window.matchMedia('(orientation: landscape)');
-        const gallery = document.querySelector("#index-mobile-gallery");
-        const galleryLarge = document.querySelector("#index-gallery");
-        const allImg = document.querySelectorAll(".painting-mobile-img");
-        function tilt(e) { 
-            
-            // screens under 769px
-            if (e.matches && enlargened === true) {
-                document.querySelector(".navbar").style.visibility = "hidden";
-                //screens over 768px
-                if (window.innerWidth > 768) {
-                    document.querySelector(".navbar").style.visibility = "hidden";
-                    galleryLarge.style.display = "none";
-                    gallery.style.display = "block";
-                }
-                gallery.style.transformOrigin = "left top";
-                gallery.style.width = "100vw"; 
-                gallery.style.height = "100vh"               
-                gallery.style.position = "absolute";
-                gallery.style.top = "100%";
-                gallery.style.left = "0%";
-                gallery.style.overflow = "hidden";
-                gallery.scrollIntoView();                
-                allPaintings.forEach(painting => {
-                    painting.style.height = "90vh";
-                    if (painting.dataset.active != "main") {
-                    painting.style.visibility = "hidden";
-                            
-                    }
-                })
-                
-                document.getElementById("about-us-text").style.backgroundImage = "none";
+    //on tilt close enlargened gallery
+    let tiltClose =(() => {
+        const mediaQueryLandscape = window.matchMedia('(orientation: landscape)');
+        const mediaQueryPortrait = window.matchMedia('(orientation: portrait)');
+        const mobgal = document.querySelector("#index-mobile-gallery");
+        const gallery768 = document.getElementById("index-gallery");
+        function tiltLandscape(e) {
+            if (e.matches && enlargened === true && '(orientation: landscape)') {               
+                if (mobgal.style.display === "none"){
+                    minimize();
+                } else {
+                    closeEnlargen.closeFun();
+                }                  
             }
         }
-        mediaQuery.addListener(tilt)
-        tilt(mediaQuery)
+        mediaQueryLandscape.addListener(tiltLandscape);
+        tiltLandscape(mediaQueryLandscape);
+
+        function tiltPortrait(e) {
+            if (e.matches && enlargened === true && '(orientation: portrait)') {               
+                if (gallery768.style.display === "none"){
+                    closeEnlargen.closeFun();
+                } else {
+                   minimize();
+                }       
+            }
+        }
+        mediaQueryPortrait.addListener(tiltPortrait);
+        tiltPortrait(mediaQueryPortrait);
+
     })();
+
+    // //tilt gallery when rotating screen with enlargened gallery
+    // let lockScreen = (() => {
+    //     const mediaQuery = window.matchMedia('(orientation: landscape)');
+    //     const gallery = document.querySelector("#index-mobile-gallery");
+    //     const galleryLarge = document.querySelector("#index-gallery");
+    //     const allImg = document.querySelectorAll(".painting-mobile-img");
+    //     //tilt landscape
+    //     function tilt(e) { 
+    //         // screens under 769px
+    //         if (e.matches && enlargened === true) {
+    //             document.querySelector(".navbar").style.visibility = "hidden";
+    //             //screens over 768px
+    //             if (window.innerWidth > 768) {
+    //                 document.querySelector(".navbar").style.visibility = "hidden";
+    //                 galleryLarge.style.display = "none";
+    //                 gallery.style.display = "block";
+    //             }
+    //             gallery.style.transformOrigin = "left top";
+    //             gallery.style.width = "100vw"; 
+    //             gallery.style.height = "100vh"               
+    //             gallery.style.position = "absolute";
+    //             gallery.style.top = "100%";
+    //             gallery.style.left = "0%";
+    //             gallery.style.overflow = "hidden";
+    //             gallery.scrollIntoView();                
+    //             allPaintings.forEach(painting => {
+    //                 painting.style.height = "90vh";
+    //                 if (painting.dataset.active != "main") {
+    //                 painting.style.visibility = "hidden";
+                            
+    //                 }
+    //             })
+                
+    //             document.getElementById("about-us-text").style.backgroundImage = "none";
+    //         }
+    //     }
+    //     mediaQuery.addListener(tilt)
+    //     tilt(mediaQuery)
+    // })();
     //gallery for screen wider than 768px
     const allPaintings768 = document.querySelectorAll(".size768");
     const gallery768 = document.getElementById("index-gallery");
