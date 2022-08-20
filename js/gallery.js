@@ -89,7 +89,7 @@ const gallery = (() => {
                 let prevPicture = document.querySelector("[data-active='prev']");
                 let nextPicture = document.querySelector("[data-active='next']");
                 let mainPicture = document.querySelector("[data-active='main']");
-            if (window.innerWidth > 480 && window.innerWidth < 769 && enlargened === true){    
+            if (window.innerWidth > 480 && enlargened === true){    
                 mainPicture.style.visibility = "visible"
                 prevPicture.style.visibility = "hidden";
                 nextPicture.style.visibility = "hidden";                    
@@ -166,15 +166,23 @@ const gallery = (() => {
                     enlargened = false;
                 })
     })(); 
-    // lock screen on tilt when gallery is enlargened
+    //tilt gallery when rotating screen with enlargened gallery
     let lockScreen = (() => {
         const mediaQuery = window.matchMedia('(orientation: landscape)');
         const gallery = document.querySelector("#index-mobile-gallery");
-        const allImg = document.querySelectorAll(".painting-mobile-img")
-        function tilt(e) {
+        const galleryLarge = document.querySelector("#index-gallery");
+        const allImg = document.querySelectorAll(".painting-mobile-img");
+        function tilt(e) { 
+            
+            // screens under 769px
             if (e.matches && enlargened === true) {
-                document.querySelector(".navbar").style.display = "none";
-                // gallery.style.transform = "rotate(-90deg)";
+                document.querySelector(".navbar").style.visibility = "hidden";
+                //screens over 768px
+                if (window.innerWidth > 768) {
+                    document.querySelector(".navbar").style.visibility = "hidden";
+                    galleryLarge.style.display = "none";
+                    gallery.style.display = "block";
+                }
                 gallery.style.transformOrigin = "left top";
                 gallery.style.width = "100vw"; 
                 gallery.style.height = "100vh"               
@@ -182,20 +190,20 @@ const gallery = (() => {
                 gallery.style.top = "100%";
                 gallery.style.left = "0%";
                 gallery.style.overflow = "hidden";
-                gallery.scrollIntoView();
+                gallery.scrollIntoView();                
                 allPaintings.forEach(painting => {
                     painting.style.height = "90vh";
                     if (painting.dataset.active != "main") {
-                        painting.style.visibility = "hidden";
+                    painting.style.visibility = "hidden";
+                            
                     }
                 })
+                
                 document.getElementById("about-us-text").style.backgroundImage = "none";
             }
         }
         mediaQuery.addListener(tilt)
         tilt(mediaQuery)
-        
-
     })();
     //gallery for screen wider than 768px
     const allPaintings768 = document.querySelectorAll(".size768");

@@ -18,7 +18,6 @@
 }
 /*index-body*/
 #index-body {
-   /*background-image: url("../img/index-background.png");*/
     background-size: cover;
     background-repeat: no-repeat;
     background-color: #F0ECEC;
@@ -190,10 +189,10 @@
         grid-template-rows: 1.5fr 2fr 2.3fr 2fr;
     }
     #about-us-text {
-    padding-top: 3%;
-    background-image: none;
-    font-size: calc(10px + 0.4vw);
-    font-family: 'Quicksand', 'Courgette', "PT serif";  
+        padding-top: 3%;
+        background-image: none;
+        font-size: calc(10px + 0.4vw);
+        font-family: 'Quicksand', 'Courgette', "PT serif";  
     }
     .toggler {
         font-size: calc(9px + 1vw);
