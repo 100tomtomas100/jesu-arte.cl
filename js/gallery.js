@@ -2,7 +2,8 @@ const gallery = (() => {
     // gallery for mobile and tablet
     const buttons = document.querySelectorAll("[data-mobile-gallery-button]");
     const allPaintings = document.querySelectorAll("[data-active]");
-    let enlargened = false;       
+    let enlargened = false;  
+    let enlargenedLarge = false;  
     buttons.forEach(button => {        
         button.addEventListener("click", () => {
             let counter = button.dataset.mobileGalleryButton === "next" ? 1 : -1;            
@@ -170,78 +171,8 @@ const gallery = (() => {
                 }   
                 return {closeFun}     
     })(); 
-    //on tilt close enlargened gallery
-    let tiltClose =(() => {
-        const mediaQueryLandscape = window.matchMedia('(orientation: landscape)');
-        const mediaQueryPortrait = window.matchMedia('(orientation: portrait)');
-        const mobgal = document.querySelector("#index-mobile-gallery");
-        const gallery768 = document.getElementById("index-gallery");
-        function tiltLandscape(e) {
-            if (e.matches && enlargened === true && '(orientation: landscape)') {               
-                if (mobgal.style.display === "none"){
-                    minimize();
-                } else {
-                    closeEnlargen.closeFun();
-                }                  
-            }
-        }
-        mediaQueryLandscape.addListener(tiltLandscape);
-        tiltLandscape(mediaQueryLandscape);
-
-        function tiltPortrait(e) {
-            if (e.matches && enlargened === true && '(orientation: portrait)') {               
-                if (gallery768.style.display === "none"){
-                    closeEnlargen.closeFun();
-                } else {
-                   minimize();
-                }       
-            }
-        }
-        mediaQueryPortrait.addListener(tiltPortrait);
-        tiltPortrait(mediaQueryPortrait);
-
-    })();
-
-    // //tilt gallery when rotating screen with enlargened gallery
-    // let lockScreen = (() => {
-    //     const mediaQuery = window.matchMedia('(orientation: landscape)');
-    //     const gallery = document.querySelector("#index-mobile-gallery");
-    //     const galleryLarge = document.querySelector("#index-gallery");
-    //     const allImg = document.querySelectorAll(".painting-mobile-img");
-    //     //tilt landscape
-    //     function tilt(e) { 
-    //         // screens under 769px
-    //         if (e.matches && enlargened === true) {
-    //             document.querySelector(".navbar").style.visibility = "hidden";
-    //             //screens over 768px
-    //             if (window.innerWidth > 768) {
-    //                 document.querySelector(".navbar").style.visibility = "hidden";
-    //                 galleryLarge.style.display = "none";
-    //                 gallery.style.display = "block";
-    //             }
-    //             gallery.style.transformOrigin = "left top";
-    //             gallery.style.width = "100vw"; 
-    //             gallery.style.height = "100vh"               
-    //             gallery.style.position = "absolute";
-    //             gallery.style.top = "100%";
-    //             gallery.style.left = "0%";
-    //             gallery.style.overflow = "hidden";
-    //             gallery.scrollIntoView();                
-    //             allPaintings.forEach(painting => {
-    //                 painting.style.height = "90vh";
-    //                 if (painting.dataset.active != "main") {
-    //                 painting.style.visibility = "hidden";
-                            
-    //                 }
-    //             })
-                
-    //             document.getElementById("about-us-text").style.backgroundImage = "none";
-    //         }
-    //     }
-    //     mediaQuery.addListener(tilt)
-    //     tilt(mediaQuery)
-    // })();
-    //gallery for screen wider than 768px
+    
+    
     const allPaintings768 = document.querySelectorAll(".size768");
     const gallery768 = document.getElementById("index-gallery");
     const sliderGallery = document.querySelector(".slider-gallery");
@@ -264,7 +195,7 @@ const gallery = (() => {
             gallery768.style.position = "relative";
             gallery768.style.backgroundColor = "rgba(32, 108, 167, 0.8)";
             document.getElementById("index-body").style.backgroundImage = "none";
-            enlargened = true;
+            enlargenedLarge = true;
         })
     })
     // next picture previous picture
@@ -330,11 +261,76 @@ const gallery = (() => {
             gallery768.style.position = "";
             gallery768.style.backgroundColor = "";
             document.getElementById("index-body").style.backgroundImage = "";
-            enlargened = false;
+            enlargenedLarge = false;
     }
     makeSmallerButton.addEventListener("click", () => {
         minimize ()
     })
+    //on tilt close enlargened gallery
+    let tiltClose =(() => {
+        const mediaQueryLandscape = window.matchMedia('(orientation: landscape)');
+        const mediaQueryPortrait = window.matchMedia('(orientation: portrait)');        
+        function tiltLandscape(e) {
+            if (e.matches && '(orientation: landscape)' && enlargenedLarge === true) {               
+                minimize();  
+            } else {
+                closeEnlargen.closeFun();                             
+            }          
+        }
+        mediaQueryLandscape.addListener(tiltLandscape);
+        tiltLandscape(mediaQueryLandscape);
+
+        function tiltPortrait(e) {
+            if (e.matches && '(orientation: portrait)' && enlargenedLarge === true) {               
+                minimize();
+            } else {                       
+                closeEnlargen.closeFun();
+            }        
+        }        
+        mediaQueryPortrait.addListener(tiltPortrait);
+        tiltPortrait(mediaQueryPortrait);
+    })();
+
+    // //tilt gallery when rotating screen with enlargened gallery
+    // let lockScreen = (() => {
+    //     const mediaQuery = window.matchMedia('(orientation: landscape)');
+    //     const gallery = document.querySelector("#index-mobile-gallery");
+    //     const galleryLarge = document.querySelector("#index-gallery");
+    //     const allImg = document.querySelectorAll(".painting-mobile-img");
+    //     //tilt landscape
+    //     function tilt(e) { 
+    //         // screens under 769px
+    //         if (e.matches && enlargened === true) {
+    //             document.querySelector(".navbar").style.visibility = "hidden";
+    //             //screens over 768px
+    //             if (window.innerWidth > 768) {
+    //                 document.querySelector(".navbar").style.visibility = "hidden";
+    //                 galleryLarge.style.display = "none";
+    //                 gallery.style.display = "block";
+    //             }
+    //             gallery.style.transformOrigin = "left top";
+    //             gallery.style.width = "100vw"; 
+    //             gallery.style.height = "100vh"               
+    //             gallery.style.position = "absolute";
+    //             gallery.style.top = "100%";
+    //             gallery.style.left = "0%";
+    //             gallery.style.overflow = "hidden";
+    //             gallery.scrollIntoView();                
+    //             allPaintings.forEach(painting => {
+    //                 painting.style.height = "90vh";
+    //                 if (painting.dataset.active != "main") {
+    //                 painting.style.visibility = "hidden";
+                            
+    //                 }
+    //             })
+                
+    //             document.getElementById("about-us-text").style.backgroundImage = "none";
+    //         }
+    //     }
+    //     mediaQuery.addListener(tilt)
+    //     tilt(mediaQuery)
+    // })();
+    //gallery for screen wider than 768px
 
     
 })();
