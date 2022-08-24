@@ -266,27 +266,29 @@ const gallery = (() => {
     })
     //on tilt close enlarged gallery
     let tiltClose =(() => {
-        const mediaQueryLandscape = window.matchMedia('(orientation: landscape)');
-        const mediaQueryPortrait = window.matchMedia('(orientation: portrait)');        
-        function tiltLandscape(e) {
-            if (e.matches && '(orientation: landscape)' && enlargedWideGallery === true) {               
-                minimizeEnlargedWideGallery();  
-            } else {
-                closeEnlarging.closeFun();                             
-            }          
-        }
-        mediaQueryLandscape.addListener(tiltLandscape);
-        tiltLandscape(mediaQueryLandscape);
+        if (enlargedWideGallery === true) {
+            const mediaQueryLandscape = window.matchMedia('(orientation: landscape)');
+            const mediaQueryPortrait = window.matchMedia('(orientation: portrait)');    
+            function tiltLandscape(e) {
+                if (e.matches && '(orientation: landscape)') {               
+                    minimizeEnlargedWideGallery();  
+                } else {
+                    closeEnlarging.closeFun();                             
+                }          
+            }
+            mediaQueryLandscape.addListener(tiltLandscape);
+            tiltLandscape(mediaQueryLandscape);
 
-        function tiltPortrait(e) {
-            if (e.matches && '(orientation: portrait)' && enlargedWideGallery === true) {               
-                minimizeEnlargedWideGallery();
-            } else {                       
-                closeEnlarging.closeFun();
+            function tiltPortrait(e) {
+                if (e.matches && '(orientation: portrait)') {               
+                    minimizeEnlargedWideGallery();
+                } else {                       
+                    closeEnlarging.closeFun();
+                }        
             }        
-        }        
-        mediaQueryPortrait.addListener(tiltPortrait);
-        tiltPortrait(mediaQueryPortrait);
+            mediaQueryPortrait.addListener(tiltPortrait);
+            tiltPortrait(mediaQueryPortrait);
+        }
     })();
 
     // //tilt gallery when rotating screen with enlargedMobileGallery gallery

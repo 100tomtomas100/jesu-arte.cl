@@ -1,4 +1,4 @@
-//index.html    
+//index.html 
     //expand text in content 
 const expandText = (() => {
     if ( document.URL.includes("index.html") ) {    
