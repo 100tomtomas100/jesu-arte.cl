@@ -2,36 +2,36 @@
 .footer-mobile {
     grid-row: 3/4;
     background-color: #F0ECEC;
-    font-family: "Proxima-Soft";
+    font-family: "Proxima-Soft", "Sans-serif";
     display: grid;
     grid-template-rows: 2fr 3fr;
     padding-left: calc(10px + 1vw);
 }
-#footer-credits {
+.footer-credits {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;    
 }
-#designed-by {
+.designed-by {
     display: flex;
     align-items: flex-end;
 }
-#tomas {
+.tomas {
     display: flex;
     align-items: center;
 }
-#year {
+.year {
     display:flex;
     align-items: center;
 }
-#footer-cooperation {
+.footer-cooperation {
     display: grid;
     grid-template-rows: 1.5fr 2.5fr;
 }
-#marcia {
+.marcia {
     display: flex;
     align-items: center;     
 }
-#marcia a {    
+.marcia a {    
     color: black;   
 }
 .footer-mobile h6 {
@@ -48,20 +48,19 @@
 .footer-mobile h2{
     font-size: calc(14px + 1vw);
 }
-#footer-socialize {
+.footer-socialize {
     display: grid;
 }
-#footer-socialize a {
+.footer-socialize a {
     text-decoration: none;
     color: black;
 }
-#social-links {
+.social-links {
     display: flex;
     justify-content: space-around;
 }
-#social-links img {
+.social-links img {
     width: calc(35px + 6vw);
-
 }
 @media (min-width: 769px) {
     .footer-mobile {     

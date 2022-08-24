@@ -5,29 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content=" Retratos en acuarela por encargo de tus mascotas y seres queridos a partir de una fotografía">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <title>Jesu.Arte, retratos de mascotas y personas </title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
 </head>
 <body id="index-body">
-    <div class="navbar">        
+    <div class="navbar">
+        <div id="logo"><a href="index.html"><img src="img/logo.png" alt="girl holding a cat logo"></a></div>
+        <div id="navbar-buttons">
+            <div id="about-us"><a href="index.html"><img src="img/buttons/about-us.png" alt="about-us"></a></div>
+            <div id="portfolio"><a href="portfolio.html"><img src="img/buttons/portfolio.png" alt="portfolio"></a></div>
+            <div id="how-buy"><a href="how-buy.html"><img src="img/buttons/how-buy.png" alt="how to buy"></a></div>
+            <div id="contact-us"><a href="contact-us.html"><img src="img/buttons/contact-us.png" alt="contact us"></a></div>
+            <div id="blog"><a href="blog.html"><img src="img/buttons/blog.png" alt="blog"></a></div>            
+        </div>
+        <div id="languages"><a href=""><img src="img/esp-to-eng.png" alt="english to spanish"></a></div>        
     </div>    
-    <div class="navbar-mobile">        
+    <div class="navbar-mobile">
+        <div id="logo-mobile"><a href="index.html"><img src="img/logo2.png" alt="girl holding a cat logo"></a></div>
+        <div id="navbar-mobile-right">
+        <div id="languages-mobile"><a href=""><img src="img/esp-to-eng.png" alt="english to spanish"></a></div>
+        <div id="burger-menu">&#9776</div>
+        <ul id="navbar-mobile-buttons">        
+            <li id="about-us-mobile" class="button"><a href="index.html">Acerca de mi</a></li>
+            <li id="portfolio-mobile" class="button"><a href="portfolio.html">Mis Trabajos</a></li>
+            <li id="how-buy-mobile" class="button"><a href="how-buy.html">Cómo comprar?</a></li>
+            <li id="contact-us-mobile" class="button"><a href="contact-us.html">Contáctame</a></li>
+            <li id="blog-mobile" class="button"><a href="blog.html">Blog</a></li>
+        </ul>
+</div>        
     </div>
     <div id="content">
         <div id="about-us-text">
             <div id="about-us-text-wrapper">
             <p id="about-us-text-p">¡Hola mi nombre es Jesu!
-                Soy artista autodidacta de la región del Biobío, Chile.
-                Siempre sentí una conexión especial con el arte, pero fue hace poco que plasmé esa conexión en un proyecto tangible, es así como nació Jesu.Arte.               
+                ¡Hola! mi nombre es Jesu, soy artista autodidacta de la región del Biobío, Chile.			
+                El arte siempre fue un misterio para mi, hasta que comencé a pintar como una forma de terapia. Desde entonces siento una conexión especial con el arte y hace poco plasmé esa conexión en un proyecto tangible: Jesu.Arte.		            
             </p>  
             <p id="about-us-text-p2">
-                Jesu.Arte es un espacio en el que me dedico a pintar retratos en acuarela por encargo de tus mascotas y seres queridos a partir de fotografías. 
-                Además de pintar retratos en acuarela, también pinto con otras técnicas como acrílico y óleo, también incursioné en el mundo de las ilustraciones digitalizadas.
-                
-                Mis ilustraciones se inspiran en el mundo animal y en el ser humano, pero sobre todo se caracterizan por la presencia del retrato, en mis obras busco reflejar la belleza particular de cada rostro y las sensaciones que estos transmiten.
-                
-                ¡Pretendo pintar cuidadosamente a tus seres queridos y que sientas el retrato lleno de vida!
-                Te invito a conocer mi trabajo y espero recibir tu encargo muy pronto.
+                Jesu.Arte es un espacio en el que me dedico a pintar retratos por encargo de animales y personas, a partir de fotografías. También he incursionado en otras técanicas, como la ilustración digital y pintura sobre objetos cotidianos.			
+                La naturaleza es mi gran inspiración, especialmente los rostros y las miradas de los seres vivos. Veo una belleza particular y un mundo de sensaciones en cada rostro, y son estas características las que busco reflejar en mi obra.			
+                ¡Procuraré pintar cuidadosamente a tus seres queridos y que sientas el retrato lleno de vida!			
+                Te invito a conocer mi trabajo y espero recibir tu encargo muy pronto.			
                 ¡BIENVENIDO!
             </p>
             </div>
@@ -39,31 +60,112 @@
             <button id="see-more-mobile-gallery"><a href="portfolio.html" id="see-more-mobile-gallery-a">Ve más aquí!</a></button>
             <ul>
                 <li class="painting-mobile" data-active>                 
-                <img src="img/gallery/mobile/20211212_140452-min.jpg" alt="painting of a dog"></li>
+                <img class="painting-mobile-img" srcset="img/gallery/mobile/mobile-2.jpg 480w,
+                            img/gallery/768px/wide-2.jpg 768w"
+                     sizes="(max-width: 480px) 480px,
+                            768px"
+                     src="img/gallery/768px/wide-2.jpg" alt="painting of a dog"></li>
                 <li class="painting-mobile" data-active>
-                <img src="img/gallery/mobile/20220205_220704-min.jpg" alt="painting of a dog"></li>
+                <img class="painting-mobile-img" srcset="img/gallery/mobile/mobile-3.jpg 480w,
+                            img/gallery/768px/wide-3.jpg 768w"
+                     sizes="(max-width: 480px) 480px,
+                            768px"                
+                     src="img/gallery/768px/wide-3.jpg" alt="painting of a dog"></li>
                 <li class="painting-mobile" data-active="prev">                
-                <img src="img/gallery/mobile/20220406_135906-min.jpg" alt="painting of a dog"></li>
+                <img class="painting-mobile-img" srcset="img/gallery/mobile/mobile-4.jpg 480w,
+                            img/gallery/768px/wide-4.jpg 768w"
+                     sizes="(max-width: 480px) 480px,
+                            768px"                
+                     src="img/gallery/768px/wide-4.jpg" alt="painting of a dog"></li>
                 <li class="painting-mobile" data-active="main">
-                <img src="img/gallery/mobile/20220712_151844-min.jpg" alt="painting of a man"></li>
+                <img class="painting-mobile-img" srcset="img/gallery/mobile/mobile-1.jpg 480w,
+                            img/gallery/768px/wide-1.jpg 768w"
+                     sizes="(max-width: 480px) 480px,
+                            768px"                
+                     src="img/gallery/768px/wide-1.jpg" alt="painting of a man"></li>
                 <li class="painting-mobile" data-active="next">
-                <img src="img/gallery/mobile/IMG_20211116_220853_577-min.jpg" alt="painting of a dog"></li>
+                <img class="painting-mobile-img" srcset="img/gallery/mobile/mobile-5.jpg 480w,
+                            img/gallery/768px/wide-5.jpg 768w"
+                     sizes="(max-width: 480px) 480px,
+                            768px"                     
+                     src="img/gallery/768px/wide-5.jpg" alt="painting of a dog"></li>
                 <li class="painting-mobile" data-active>
-                <img src="img/gallery/mobile/20220430_201229-min.jpg" alt="painting of a dog"></li>
+                <img class="painting-mobile-img" srcset="img/gallery/mobile/mobile-6.jpg 480w,
+                            img/gallery/768px/wide-6.jpg 768w"
+                     sizes="(max-width: 480px) 480px,
+                            768px"
+                     src="img/gallery/768px/wide-6.jpg" alt="painting of a dog"></li>
                 <li class="painting-mobile" data-active>
-                <img src="img/gallery/mobile/IMG_20211021_103544_207-min.jpg" alt="painting of a cat"></li>
+                <img class="painting-mobile-img" srcset="img/gallery/mobile/mobile-7.jpg 480w,
+                            img/gallery/768px/wide-7.jpg 768w"
+                     sizes="(max-width: 480px) 480px,
+                            768px"
+                     src="img/gallery/768px/wide-7.jpg" alt="painting of a cat"></li>
             </ul>            
+        </div>
+        <div id="index-gallery">
+            <div class="slider-gallery">               
+                <span style="--i:1"><img class="size768" src="img/gallery/768px/wide-2.jpg" alt="painting of a dog"></span>
+                <span style="--i:2"><img class="size768" src="img/gallery/768px/wide-3.jpg" alt="painting of a dog"></span>
+                <span style="--i:3"><img class="size768" src="img/gallery/768px/wide-4.jpg" alt="painting of a dog"></span>
+                <span style="--i:4"><img class="size768" src="img/gallery/768px/wide-1.jpg" alt="painting of a man"></span>
+                <span style="--i:5"><img class="size768" src="img/gallery/768px/wide-5.jpg" alt="painting of a dog"></span>
+                <span style="--i:6"><img class="size768" src="img/gallery/768px/wide-6.jpg" alt="painting of a dog"></span>
+                <span style="--i:7"><img class="size768" src="img/gallery/768px/wide-7.jpg" alt="painting of a cat"></span>
+                <span style="--i:8"><img class="size768" src="img/gallery/768px/wide-8.jpg" alt="painting of a dog"></span>
+            </div>
+            <div id=large>
+                <div id="close-enlarged-gallery-wrapper-large"><div id="close-enlarged-gallery-large">&#x2715;</div></div> 
+                <button class="index-gallery-buttons gallery-prev" data-gallery-button="prev">&#8656;</button>
+                <button class="index-gallery-buttons gallery-next" data-gallery-button="next">&#8658;</button>
+                <span id="largespan"><img id="large-img"  alt=""></span>
+            </div>
         </div>
         <div id="index-social-media">
             <div class="social-img"><a href="https://www.instagram.com/jesu.arte/"><img src="img/social-media/instagram2.png" alt="instagram logo"></a></div>
             <div class="social-img"><a href="https://www.facebook.com/jesuarte-112219804689912"><img src="img/social-media/facebook.png" alt="facebook logo"></a></div>
-            <div class="social-img"><a href=""><img src="img/social-media/whatsapp.png" alt="whatsapp logo"></a></div>
+            <div class="social-img"><a href="https://wa.me/56937511923"><img src="img/social-media/whatsapp.png" alt="whatsapp logo"></a></div>
         </div>
         <div id="index-reviews">
-            <img src="img/reviews.png" alt="reviews">
+            <div id="index-reviews-desktop">
+                <img src="img/299762512_2909051932724015_8956403200966284_n-min.jpg" alt="reviews">
+            </div>
+            <div id="index-reviews-mobile">
+                <img src="img/reviews.png" alt="reviews">
+            </div>            
         </div>
     </div>  
     <div class="footer-mobile">
+        <div id="footer-credits">
+            <h5 id="designed-by">DESIGNED BY</h5>
+            <h2 id="tomas">Tomas Pocius</h2>
+            <h4 id="year"></h4>
+        </div>
+        <div id="footer-cooperation">
+            <h4 id="marcia">In cooperation with &nbsp
+                <a target=”_blank” href="https://www.digitalmarcia.com">Digital Marcia</a>
+            </h4>
+            <div id="footer-socialize">
+                <h5>SOCIALIZE</h5>
+                <div id="social-links">
+                    <h6><a target=”_blank” href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fdigital.marcia%2F%3Fhl%3Des-la%26fbclid%3DIwAR2LkTWVqALiwD8QsTAGf9lSvXeAN6mqUP5KM1jOfh7HBlR6PF6KzeO0gQo&h=AT0-PeOcns0Ai_q-vUS5fNApa25BGCxetDHzg0Uks3w-mLfa6BOqAP1JHJJHU5-aErNp5SfOaDaHciGcizae4_oHXsUgwKWDNHIYqIGQhBb4JYi95Uwrx6pU5izkQNm3D-FlwGcCMhc">
+                        <img src="img/social-media/instagram.png" alt="instagram logo"></a></h6>
+                    <h6><a target=”_blank”  href="https://www.linkedin.com/company/digital-marcia/">
+                        <img src="img/social-media/linkedin.png" alt="linkedin logo"></a></h6>     
+                </div>
+            </div>    
+        </div>
+        <script>
+            const currentYear = (() => {
+                let year = document.getElementById("year");
+                let yearNow = new Date().getFullYear();
+                if (yearNow === 2022) {
+                    year.innerText =`© ${yearNow}`;
+                } else {
+                    year.innerText =`© 2022 - ${yearNow}`;
+                }
+            })();
+        </script>
 
     </div>  
 </body>

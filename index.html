@@ -7,22 +7,42 @@
     <meta name="description" content=" Retratos en acuarela por encargo de tus mascotas y seres queridos a partir de una fotografía">
     <link rel="stylesheet" href="style/navbar.css">
     <link rel="stylesheet" href="style/footer.css">
-    <link rel="stylesheet" href="style/gallery.css">
+    <link rel="stylesheet" href="style/gallery-index.css">
     <link rel="stylesheet" href="style/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Josefin+Sans:wght@300&family=PT+Serif&family=Quicksand:wght@500&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
-    <script src="js/script.js" defer></script>     
-    <script src="js/footer.js" defer></script>
-    <script src="js/gallery.js" defer></script>
+    <script src="js/script.js" defer></script>  
+    <script src="js/footer.js" defer></script>    
+    <script src="js/gallery-index.js" defer></script>
     <script src="js/navbar.js" defer></script>
     <title>Jesu.Arte, retratos de mascotas y personas </title>
 </head>
 <body id="index-body">
-    <div class="navbar">        
+    <div class="navbar">
+        <div class="logo"><a href="index.html"><img src="img/logo.png" alt="girl holding a cat logo"></a></div>
+        <div class="navbar-buttons">
+            <div class="about-us"><a href="index.html"><img src="img/buttons/about-us.png" alt="about us"></a></div>
+            <div class="portfolio"><a href="portfolio.html"><img src="img/buttons/portfolio.png" alt="portfolio"></a></div>
+            <div class="how-buy"><a href="how-buy.html"><img src="img/buttons/how-buy.png" alt="how to buy"></a></div>
+            <div class="contact-us"><a href="contact-us.html"><img src="img/buttons/contact-us.png" alt="contact us"></a></div>
+            <div class="blog"><a href="blog.html"><img src="img/buttons/blog.png" alt="blog"></a></div>            
+        </div>
+        <div class="languages"><a href=""><img src="img/esp-to-eng.png" alt="english to spanish"></a></div>        
     </div>    
-    <div class="navbar-mobile">        
+    <div class="navbar-mobile">
+        <div class="logo-mobile"><a href="index.html"><img src="img/logo2.png" alt="girl holding a cat logo"></a></div>
+        <div class="navbar-mobile-right">
+        <div class="languages-mobile"><a href=""><img src="img/esp-to-eng.png" alt="english to spanish"></a></div>
+        <div class="burger-menu">&#9776</div>
+        <ul class="navbar-mobile-buttons">        
+            <a href="index.html"><li class="about-us-mobile button">Acerca de mi</li></a>
+            <a href="portfolio.html"><li class="portfolio-mobile button">Mis Trabajos</li></a>
+            <a href="how-buy.html"><li class="how-buy-mobile button">Cómo comprar?</li></a>
+            <a href="contact-us.html"><li class="contact-us-mobile button">Contáctame</li></a>
+            <a href="blog.html"><li class="blog-mobile button">Blog</li></a>
+        </ul>
+        </div>        
     </div>
     <div id="content">
         <div id="about-us-text">
@@ -47,65 +67,65 @@
             <button id="see-more-mobile-gallery"><a href="portfolio.html" id="see-more-mobile-gallery-a">Ve más aquí!</a></button>
             <ul>
                 <li class="painting-mobile" data-active>                 
-                <img class="painting-mobile-img" srcset="img/gallery/mobile/20211212_140452-min.jpg 480w,
-                            img/gallery/768px/20211212_140452-min.jpg 768w"
+                <img class="painting-mobile-img" srcset="img/gallery/mobile/mobile-2.jpg 480w,
+                            img/gallery/768px/wide-2.jpg 768w"
                      sizes="(max-width: 480px) 480px,
                             768px"
-                     src="img/gallery/768px/20211212_140452-min.jpg" alt="painting of a dog"></li>
+                     src="img/gallery/768px/wide-2.jpg" alt="painting of a dog"></li>
                 <li class="painting-mobile" data-active>
-                <img class="painting-mobile-img" srcset="img/gallery/mobile/20220205_220704-min.jpg 480w,
-                            img/gallery/768px/20220205_220704-min.jpg 768w"
+                <img class="painting-mobile-img" srcset="img/gallery/mobile/mobile-3.jpg 480w,
+                            img/gallery/768px/wide-3.jpg 768w"
                      sizes="(max-width: 480px) 480px,
                             768px"                
-                     src="img/gallery/768px/20220205_220704-min.jpg" alt="painting of a dog"></li>
+                     src="img/gallery/768px/wide-3.jpg" alt="painting of a dog"></li>
                 <li class="painting-mobile" data-active="prev">                
-                <img class="painting-mobile-img" srcset="img/gallery/mobile/20220406_135906-min.jpg 480w,
-                            img/gallery/768px/20220406_135906-min.jpg 768w"
+                <img class="painting-mobile-img" srcset="img/gallery/mobile/mobile-4.jpg 480w,
+                            img/gallery/768px/wide-4.jpg 768w"
                      sizes="(max-width: 480px) 480px,
                             768px"                
-                     src="img/gallery/768px/20220406_135906-min.jpg" alt="painting of a dog"></li>
+                     src="img/gallery/768px/wide-4.jpg" alt="painting of a dog"></li>
                 <li class="painting-mobile" data-active="main">
-                <img class="painting-mobile-img" srcset="img/gallery/mobile/20220712_151844-min.jpg 480w,
-                            img/gallery/768px/20220712_151844-min.jpg 768w"
+                <img class="painting-mobile-img" srcset="img/gallery/mobile/mobile-1.jpg 480w,
+                            img/gallery/768px/wide-1.jpg 768w"
                      sizes="(max-width: 480px) 480px,
                             768px"                
-                     src="img/gallery/mobile/20220712_151844-min.jpg" alt="painting of a man"></li>
+                     src="img/gallery/768px/wide-1.jpg" alt="painting of a man"></li>
                 <li class="painting-mobile" data-active="next">
-                <img class="painting-mobile-img" srcset="img/gallery/mobile/IMG_20211116_220853_577-min.jpg 480w,
-                            img/gallery/768px/IMG_20211116_220853_577-min.jpg 768w"
+                <img class="painting-mobile-img" srcset="img/gallery/mobile/mobile-5.jpg 480w,
+                            img/gallery/768px/wide-5.jpg 768w"
                      sizes="(max-width: 480px) 480px,
                             768px"                     
-                     src="img/gallery/768px/IMG_20211116_220853_577-min.jpg" alt="painting of a dog"></li>
+                     src="img/gallery/768px/wide-5.jpg" alt="painting of a dog"></li>
                 <li class="painting-mobile" data-active>
-                <img class="painting-mobile-img" srcset="img/gallery/mobile/20220430_201229-min.jpg 480w,
-                            img/gallery/768px/20220430_201229-min.jpg 768w"
+                <img class="painting-mobile-img" srcset="img/gallery/mobile/mobile-6.jpg 480w,
+                            img/gallery/768px/wide-6.jpg 768w"
                      sizes="(max-width: 480px) 480px,
                             768px"
-                     src="img/gallery/768px/20220430_201229-min.jpg" alt="painting of a dog"></li>
+                     src="img/gallery/768px/wide-6.jpg" alt="painting of a dog"></li>
                 <li class="painting-mobile" data-active>
-                <img class="painting-mobile-img" srcset="img/gallery/mobile/IMG_20211021_103544_207-min.jpg 480w,
-                            img/gallery/768px/IMG_20211021_103544_207-min.jpg 768w"
+                <img class="painting-mobile-img" srcset="img/gallery/mobile/mobile-7.jpg 480w,
+                            img/gallery/768px/wide-7.jpg 768w"
                      sizes="(max-width: 480px) 480px,
                             768px"
-                     src="img/gallery/768px/IMG_20211021_103544_207-min.jpg" alt="painting of a cat"></li>
+                     src="img/gallery/768px/wide-7.jpg" alt="painting of a cat"></li>
             </ul>            
         </div>
         <div id="index-gallery">
-            <div class="slider-gallery">               
-                <span style="--i:1"><img class="size768" src="img/gallery/768px/20211212_140452-min.jpg" alt="painting of a dog"></span>
-                <span style="--i:2"><img class="size768" src="img/gallery/768px/20220205_220704-min.jpg" alt="painting of a dog"></span>
-                <span style="--i:3"><img class="size768" src="img/gallery/768px/20220406_135906-min.jpg" alt="painting of a dog"></span>
-                <span style="--i:4"><img class="size768" src="img/gallery/768px/20220430_201229-min.jpg" alt="painting of a man"></span>
-                <span style="--i:5"><img class="size768" src="img/gallery/768px/20220712_151844-min.jpg" alt="painting of a dog"></span>
-                <span style="--i:6"><img class="size768" src="img/gallery/768px/IMG_20211021_103544_207-min.jpg" alt="painting of a dog"></span>
-                <span style="--i:7"><img class="size768" src="img/gallery/768px/IMG_20211116_220853_577-min.jpg" alt="painting of a cat"></span>
-                <span style="--i:8"><img class="size768" src="img/gallery/768px/20211215_233525-min.jpg" alt="painting of a dog"></span>
+            <div class="index-slider-gallery">               
+                <span style="--i:1"><img class="index-gallery-wide-size768" src="img/gallery/768px/wide-2.jpg" alt="painting of a dog"></span>
+                <span style="--i:2"><img class="index-gallery-wide-size768" src="img/gallery/768px/wide-3.jpg" alt="painting of a dog"></span>
+                <span style="--i:3"><img class="index-gallery-wide-size768" src="img/gallery/768px/wide-4.jpg" alt="painting of a dog"></span>
+                <span style="--i:4"><img class="index-gallery-wide-size768" src="img/gallery/768px/wide-1.jpg" alt="painting of a man"></span>
+                <span style="--i:5"><img class="index-gallery-wide-size768" src="img/gallery/768px/wide-5.jpg" alt="painting of a dog"></span>
+                <span style="--i:6"><img class="index-gallery-wide-size768" src="img/gallery/768px/wide-6.jpg" alt="painting of a dog"></span>
+                <span style="--i:7"><img class="index-gallery-wide-size768" src="img/gallery/768px/wide-7.jpg" alt="painting of a cat"></span>
+                <span style="--i:8"><img class="index-gallery-wide-size768" src="img/gallery/768px/wide-8.jpg" alt="painting of a dog"></span>
             </div>
-            <div id=large>
+            <div id=index-gallery-enlarged>
                 <div id="close-enlarged-gallery-wrapper-large"><div id="close-enlarged-gallery-large">&#x2715;</div></div> 
                 <button class="index-gallery-buttons gallery-prev" data-gallery-button="prev">&#8656;</button>
                 <button class="index-gallery-buttons gallery-next" data-gallery-button="next">&#8658;</button>
-                <span id="largespan"><img id="large-img" src="" alt=""></span>
+                <span id="index-gallery-enlarged-large-span"><img id="index-gallery-enlarged-img" src="" alt=""></span>
             </div>
         </div>
         <div id="index-social-media">
@@ -115,15 +135,33 @@
         </div>
         <div id="index-reviews">
             <div id="index-reviews-desktop">
-                <img src="img/3.jpg" alt="reviews">
+                <img src="img/reviews-wide.jpg" alt="reviews">
             </div>
             <div id="index-reviews-mobile">
-                <img src="img/reviews.png" alt="reviews">
+                <img src="img/reviews-mobile.png" alt="reviews">
             </div>            
         </div>
     </div>  
     <div class="footer-mobile">
-
+        <div class="footer-credits">
+            <h5 class="designed-by">DESIGNED BY</h5>
+            <h2 class="tomas">Tomas Pocius</h2>
+            <h4 class="year"></h4>
+        </div>
+        <div class="footer-cooperation">
+            <h4 class="marcia">In cooperation with &nbsp
+                <a target=”_blank” href="https://www.digitalmarcia.com">Digital Marcia</a>
+            </h4>
+            <div class="footer-socialize">
+                <h5>SOCIALIZE</h5>
+                <div class="social-links">
+                    <h6><a target=”_blank” href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fdigital.marcia%2F%3Fhl%3Des-la%26fbclid%3DIwAR2LkTWVqALiwD8QsTAGf9lSvXeAN6mqUP5KM1jOfh7HBlR6PF6KzeO0gQo&h=AT0-PeOcns0Ai_q-vUS5fNApa25BGCxetDHzg0Uks3w-mLfa6BOqAP1JHJJHU5-aErNp5SfOaDaHciGcizae4_oHXsUgwKWDNHIYqIGQhBb4JYi95Uwrx6pU5izkQNm3D-FlwGcCMhc">
+                        <img src="img/social-media/instagram.png" alt="instagram logo"></a></h6>
+                    <h6><a target=”_blank”  href="https://www.linkedin.com/company/digital-marcia/">
+                        <img src="img/social-media/linkedin.png" alt="linkedin logo"></a></h6>     
+                </div>
+            </div>    
+        </div>
     </div>  
 </body>
 </html>

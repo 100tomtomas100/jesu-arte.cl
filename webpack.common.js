@@ -7,7 +7,6 @@ module.exports = {
     script: './src/js/script.js',
     navbar: './src/js/navbar.js',
     gallery: './src/js/gallery.js',
-    footer: './src/js/footer.js'
   },
   module: {
     rules: [

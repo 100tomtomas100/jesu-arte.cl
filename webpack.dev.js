@@ -8,7 +8,7 @@ module.exports = merge(common, {
     output: {
       filename: "[name].bundle.js",
       path: path.resolve(__dirname, "dist"),
-      assetModuleFilename: 'images/[name][ext][query]',
+      assetModuleFilename: 'images/[hash][ext][query]',
     },
     devServer: {
         static: {
@@ -43,21 +43,21 @@ module.exports = merge(common, {
             }
         ),
         new HtmlWebpackPlugin({
-            title: "footer",
-            filename: "footer.html",
-            template: "src/footer.html"
+            title: "Contact us",
+            filename: "contact-us.html",
+            template: "src/contact-us.html"
             }
         ),
         new HtmlWebpackPlugin({
-          title: "navbar",
-          filename: "navbar.html",
-          template: "src/navbar.html"
+          title: "How to buy",
+          filename: "how-buy.html",
+          template: "src/how-buy.html"
           }
         ),
         new HtmlWebpackPlugin({
-          title: "navbar",
-          filename: "navbar-mobile.html",
-          template: "src/navbar-mobile.html"
+          title: "Gallery",
+          filename: "portfolio.html",
+          template: "src/portfolio.html"
           }
         )                           
 

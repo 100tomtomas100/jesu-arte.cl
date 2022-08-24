@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    touch-action: manipulation;
+}
+#how-buy-body {
+    display: grid;
+    grid-template-rows: 1fr 6fr 2.5fr;
+    overflow-x: hidden;
+    background-color: #F0ECEC;
+}
+#how-buy-content img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+/*responsive screen sizes*/
+@media (max-width: 480px) {
+   
+}
+@media (min-width: 481px) and (max-width: 768px) {
+    #how-buy-body {
+        grid-template-rows: 1fr 6fr 2.3fr;
+    }
+}
+@media (min-width: 769px) {
+    #how-buy-body {
+        grid-template-rows: 1fr 8fr 2fr;
+    }
+}

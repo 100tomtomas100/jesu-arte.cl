@@ -9,9 +9,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = merge(common, {
     mode: "production",
     output: {
-      filename: "./js/[name].[fullhash].bundle.js",
+      filename: "./js/[name].[hash].bundle.js",
       path: path.resolve(__dirname, "dist"),
-      assetModuleFilename: 'images/[hash][ext][query]',
+      assetModuleFilename: './images/[hash][ext][query]',
       clean: true,
       library: 'myApp'
     },
@@ -29,8 +29,8 @@ module.exports = merge(common, {
                 }
             }),
             new HtmlWebpackPlugin({
-                template: "./src/footer.html",
-                filename: "./footer.html",
+                template: "./src/contact-us.html",
+                filename: "./contact-us.html",
                 minify: {
                 removeAttributeQuotes: true,
                 collapseWhitespace: true,
@@ -38,8 +38,8 @@ module.exports = merge(common, {
                 }
             }),
             new HtmlWebpackPlugin({
-                template: "./src/navbar.html",
-                filename: "./navbar.html",
+                template: "./src/how-buy.html",
+                filename: "./how-buy.html",
                 minify: {
                 removeAttributeQuotes: true,
                 collapseWhitespace: true,
@@ -47,8 +47,8 @@ module.exports = merge(common, {
                 }
             }),
             new HtmlWebpackPlugin({
-              template: "./src/navbar-mobile.html",
-              filename: "./navbar-mobile.html",
+              template: "./src/portfolio.html",
+              filename: "./portfolio.html",
               minify: {
               removeAttributeQuotes: true,
               collapseWhitespace: true,
@@ -58,15 +58,15 @@ module.exports = merge(common, {
         ]
     },
     plugins: [
-        new MiniCssExtractPlugin({ filename: "./css/[name].[fullhash].css" })
+        new MiniCssExtractPlugin({ filename: "./css/[name].[hash].css" })
     ],
     module: {
         rules: [
           {
             test: /\.css$/i,
             use: [
-              MiniCssExtractPlugin.loader, //3. Extract css into files
-              "css-loader", //2. Turns css into commonjs
+              MiniCssExtractPlugin.loader,
+              "css-loader"
             ]
           },
           {

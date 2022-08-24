@@ -1,7 +1,9 @@
-import "../style/navbar.css"
-import "../style/gallery.css"
-import "../style/footer.css"
-import "../style/style.css"
+import "../footer.css";
+import "../gallery.css";
+import "../navbar.css";
+import "../style.css";
+
+
 //expand text in content 
 const expandText = (() => {
     const textColumn = document.getElementById("about-us-text-p");
