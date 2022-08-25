@@ -267,11 +267,9 @@ const gallery = (() => {
     let tiltClose =(() => {
         if (enlargedGalleryWide === true || enlargedMobileGallery === true) {
         const mediaQueryLandscape = window.matchMedia('(orientation: landscape)');
-        const mediaQueryPortrait = window.matchMedia('(orientation: portrait)');
-       
-          
+        const mediaQueryPortrait = window.matchMedia('(orientation: portrait)');          
         function tiltLandscape(e) {
-            if (e.matches && '(orientation: landscape)') {               
+            if (e.matches && '(orientation: landscape)' && enlargedGalleryWide === true) {               
                 minimizeEnlargedWideGallery();  
             } else {
                 closeEnlarging.closeFun();                             
@@ -281,14 +279,14 @@ const gallery = (() => {
         tiltLandscape(mediaQueryLandscape);
 
         function tiltPortrait(e) {
-            if (e.matches && '(orientation: portrait)') {               
+            if (e.matches && '(orientation: portrait)' && enlargedGalleryWide === true) {               
                 minimizeEnlargedWideGallery();
             } else {                       
                 closeEnlarging.closeFun();
             }        
         }        
         mediaQueryPortrait.addListener(tiltPortrait);
-        tiltPortrait(mediaQueryPortrait); 
+        tiltPortrait(mediaQueryPortrait);
         }
     })();
 
