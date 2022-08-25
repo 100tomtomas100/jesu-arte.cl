@@ -118,12 +118,11 @@ const gallery = (() => {
                 mobGal.scrollIntoView();  
                 mobGal.style.backgroundColor = "rgba(32, 108, 167, 0.2)";
                 mobGal.style.backgroundImage = "none";
-                document.getElementById("close-enlarged-gallery-wrapper").style.visibility = "visible";
-               
+                document.getElementById("close-enlarged-gallery-wrapper").style.visibility = "visible";               
                 document.querySelector(".navbar-mobile").style.visibility = "hidden";               
-                document.getElementById("see-more-mobile-gallery-a").style.color = "rgba(255,255,255, 0.5)";
-                document.getElementById("see-more-mobile-gallery").style.display = "block";
-                document.getElementById("see-more-mobile-gallery").style.backgroundColor = "rgba(0, 0, 0, 0.2)";
+                // document.getElementById("see-more-mobile-gallery-a").style.color = "rgba(255,255,255, 0.5)";
+                // document.getElementById("see-more-mobile-gallery").style.display = "block";
+                // document.getElementById("see-more-mobile-gallery").style.backgroundColor = "rgba(0, 0, 0, 0.2)";
                 document.getElementById("index-body").style.backgroundImage = "none"; 
                 if (window.innerWidth > 480 && window.innerWidth < 769){
                     document.querySelector(".navbar").style.visibility = "hidden";
@@ -149,14 +148,14 @@ const gallery = (() => {
                     document.getElementById("index-body").style.overflow = "";
                     document.querySelector(".navbar-mobile").style.visibility = "visible";   
                     document.getElementById("index-body").style.backgroundImage = "";
-                    document.getElementById("see-more-mobile-gallery-a").style.color = "";
-                    document.getElementById("see-more-mobile-gallery").style.display = "";
+                    // document.getElementById("see-more-mobile-gallery-a").style.color = "";
+                    // document.getElementById("see-more-mobile-gallery").style.display = "";
                     mobGal.style.backgroundColor = "";
                     mobGal.style.backgroundImage = "";
                     mobGal.style.height = ""
                     mobGal.scrollIntoView();
                     mobGal.style.color = "";
-                    document.getElementById("see-more-mobile-gallery").style.backgroundColor = "";
+                    // document.getElementById("see-more-mobile-gallery").style.backgroundColor = "";
                     allPaintings.forEach(painting => {
                         painting.style.width = ""
                         painting.style.height = ""
@@ -266,28 +265,30 @@ const gallery = (() => {
     })
     //on tilt close enlarged gallery
     let tiltClose =(() => {
-        if (enlargedWideGallery === true) {
-            const mediaQueryLandscape = window.matchMedia('(orientation: landscape)');
-            const mediaQueryPortrait = window.matchMedia('(orientation: portrait)');    
-            function tiltLandscape(e) {
-                if (e.matches && '(orientation: landscape)') {               
-                    minimizeEnlargedWideGallery();  
-                } else {
-                    closeEnlarging.closeFun();                             
-                }          
-            }
-            mediaQueryLandscape.addListener(tiltLandscape);
-            tiltLandscape(mediaQueryLandscape);
+        if (enlargedGalleryWide === true || enlargedMobileGallery === true) {
+        const mediaQueryLandscape = window.matchMedia('(orientation: landscape)');
+        const mediaQueryPortrait = window.matchMedia('(orientation: portrait)');
+       
+          
+        function tiltLandscape(e) {
+            if (e.matches && '(orientation: landscape)') {               
+                minimizeEnlargedWideGallery();  
+            } else {
+                closeEnlarging.closeFun();                             
+            }          
+        }
+        mediaQueryLandscape.addListener(tiltLandscape);
+        tiltLandscape(mediaQueryLandscape);
 
-            function tiltPortrait(e) {
-                if (e.matches && '(orientation: portrait)') {               
-                    minimizeEnlargedWideGallery();
-                } else {                       
-                    closeEnlarging.closeFun();
-                }        
+        function tiltPortrait(e) {
+            if (e.matches && '(orientation: portrait)') {               
+                minimizeEnlargedWideGallery();
+            } else {                       
+                closeEnlarging.closeFun();
             }        
-            mediaQueryPortrait.addListener(tiltPortrait);
-            tiltPortrait(mediaQueryPortrait);
+        }        
+        mediaQueryPortrait.addListener(tiltPortrait);
+        tiltPortrait(mediaQueryPortrait); 
         }
     })();
 
