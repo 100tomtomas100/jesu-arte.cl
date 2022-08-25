@@ -1,7 +1,6 @@
 //index.html 
     //expand text in content 
 const expandText = (() => {
-    if ( document.URL.includes("index.html") ) {    
         const textColumn = document.getElementById("about-us-text-p");
         const textColumn2 = document.getElementById("about-us-text-p2");
         let toggler = document.createElement("div");
@@ -15,7 +14,6 @@ const expandText = (() => {
                 textColumn.appendChild(toggler);        
             }
         })
-    }
 })();
 
 
