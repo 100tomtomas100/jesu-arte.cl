@@ -6,7 +6,7 @@
 }
 /* custom fonts */
 @font-face {
-   font-family: "Proxima-Soft", "Arial", "Verdana";
+   font-family: "Proxima-Soft";
     src: url("../fonts/FontsFree-Net-ProximaSoft-Bold.ttf") format("truetype"); 
 }
 /*index-body*/

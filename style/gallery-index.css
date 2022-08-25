@@ -129,7 +129,7 @@
     border: none;    
     border-radius: 10px;
     font-size: calc(20px + 2vw);
-    font-family: "Proxima-Soft";
+    font-family: "Proxima-Soft", "Arial", "Verdana";
     background-color: rgba(255, 255, 255, 0.8);        
 }
 #see-more-mobile-gallery {
