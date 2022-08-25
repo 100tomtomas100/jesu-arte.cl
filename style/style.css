@@ -6,7 +6,7 @@
 }
 /* custom fonts */
 @font-face {
-   font-family: "Proxima-Soft";
+   font-family: "Proxima-Soft", "Arial", "Verdana";
     src: url("../fonts/FontsFree-Net-ProximaSoft-Bold.ttf") format("truetype"); 
 }
 /*index-body*/
@@ -146,7 +146,7 @@
         font-size: calc(10px + 0.8vw);
         padding-top: 15%;
         padding-left: 10%;
-        font-family: "PT serif", "Sans-serif";
+        font-family: "PT serif", "Arial", "Verdana";
         background-image: url("../img/background/background-768px/about-us-background.jpg");
     }
     .toggler {
@@ -184,7 +184,7 @@
         padding-top: 3%;
         background-image: none;
         font-size: calc(10px + 0.4vw);
-        font-family: 'Quicksand', 'Courgette', "PT serif", "Sans-serif";  
+        font-family: 'Quicksand', 'Courgette', "PT serif", "Arial", "Verdana";  
     }
     .toggler {
         font-size: calc(9px + 1vw);
