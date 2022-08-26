@@ -111,19 +111,24 @@ const gallery = (() => {
                 enlargedMobileGallery = true;
                 const mobGal = document.getElementById("index-mobile-gallery");              
                 mobGal.style.height = "100vh";
+                mobGal.style.width = "100vw";
                 allPaintings.forEach(painting => {
-                    painting.style.width = "100vw"
-                }); 
-                document.getElementById("index-body").style.overflow = "hidden";
+                    painting.style.width = "100vw";
+                });                
+                document.body.style.overflow = "hidden";                
+                mobGal.style.position = "fixed"
+                mobGal.style.top = 0;
+                mobGal.style.left = 0;                          
                 mobGal.scrollIntoView();  
-                mobGal.style.backgroundColor = "rgba(32, 108, 167, 0.2)";
-                mobGal.style.backgroundImage = "none";
+                mobGal.style.backgroundColor = "rgba(32, 108, 167, 0.2)";                
                 document.getElementById("close-enlarged-gallery-wrapper").style.visibility = "visible";               
                 document.querySelector(".navbar-mobile").style.visibility = "hidden";               
                 // document.getElementById("see-more-mobile-gallery-a").style.color = "rgba(255,255,255, 0.5)";
                 // document.getElementById("see-more-mobile-gallery").style.display = "block";
                 // document.getElementById("see-more-mobile-gallery").style.backgroundColor = "rgba(0, 0, 0, 0.2)";
-                document.getElementById("index-body").style.backgroundImage = "none"; 
+                document.getElementById("index-body").style.backgroundImage = "none";
+                document.getElementById("about-us-text").style.visibility = "hidden";
+                document.getElementById("index-social-media").style.visibility = "hidden"; 
                 if (window.innerWidth > 480 && window.innerWidth < 769){
                     document.querySelector(".navbar").style.visibility = "hidden";
                     let prevPicture = document.querySelector("[data-active='prev']");
@@ -133,7 +138,7 @@ const gallery = (() => {
                     allPaintings.forEach(painting => {
                         painting.style.height= "100vh"
                     });                  
-                }
+                }              
             })    
         }) 
     })();   
@@ -144,8 +149,8 @@ const gallery = (() => {
                     closeFun();                    
                 })        
                 const closeFun = () => {
-                    document.getElementById("close-enlarged-gallery-wrapper").style.visibility = "hidden";
-                    document.getElementById("index-body").style.overflow = "";
+                    document.getElementById("close-enlarged-gallery-wrapper").style.visibility = "hidden";                   
+                    document.body.style.overflow = "";
                     document.querySelector(".navbar-mobile").style.visibility = "visible";   
                     document.getElementById("index-body").style.backgroundImage = "";
                     // document.getElementById("see-more-mobile-gallery-a").style.color = "";
@@ -153,8 +158,14 @@ const gallery = (() => {
                     mobGal.style.backgroundColor = "";
                     mobGal.style.backgroundImage = "";
                     mobGal.style.height = ""
+                    mobGal.style.width = ""
                     mobGal.scrollIntoView();
                     mobGal.style.color = "";
+                    mobGal.style.position = ""
+                    mobGal.style.top = "";
+                    mobGal.style.left = "";  
+                    document.getElementById("about-us-text").style.visibility = "";
+                    document.getElementById("index-social-media").style.visibility = ""; 
                     // document.getElementById("see-more-mobile-gallery").style.backgroundColor = "";
                     allPaintings.forEach(painting => {
                         painting.style.width = ""
@@ -182,19 +193,25 @@ const gallery = (() => {
     // enlarge
     allPaintings768.forEach(painting => {
         painting.addEventListener("click", () => {
+            enlargedWideGallery = true;
             mainPaintingLarge = painting;
             mainPaintingLarge.dataset.active = "main";
             enlargedGalleryWide.style.display = "block";
             sliderGallery.style.display = "none";
             document.querySelector(".navbar").style.visibility = "hidden";
-            gallery768.style.height = "100vh";           
+            gallery768.style.height = "100vh"; 
+            gallery768.style.width = "100vw";          
             largeImg.src = painting.src;
-            document.getElementById("index-body").style.overflow = "hidden";
+            document.body.style.overflow = "hidden";
+            gallery768.style.position = "fixed";
+            gallery768.style.top = 0;
+            gallery768.style.left = 0;        
             gallery768.scrollIntoView();
-            gallery768.style.position = "relative";
+            // gallery768.style.position = "relative";
             gallery768.style.backgroundColor = "rgba(32, 108, 167, 0.8)";
             document.getElementById("index-body").style.backgroundImage = "none";
-            enlargedWideGallery = true;
+            document.getElementById("about-us-text").style.visibility = "hidden";
+            document.getElementById("index-social-media").style.visibility = "hidden";            
         })
     })
     // next picture previous picture
@@ -256,8 +273,12 @@ const gallery = (() => {
             document.getElementById("index-body").style.overflow = "";
             gallery768.scrollIntoView();
             gallery768.style.position = "";
+            gallery768.style.top = "";
+            gallery768.style.left = ""; 
             gallery768.style.backgroundColor = "";
             document.getElementById("index-body").style.backgroundImage = "";
+            document.getElementById("about-us-text").style.visibility = "";
+            document.getElementById("index-social-media").style.visibility = ""; 
             enlargedWideGallery = false;
     }
     closeEnlargedWideGallery.addEventListener("click", () => {
@@ -265,29 +286,31 @@ const gallery = (() => {
     })
     //on tilt close enlarged gallery
     let tiltClose =(() => {
-        if (enlargedGalleryWide === true || enlargedMobileGallery === true) {
         const mediaQueryLandscape = window.matchMedia('(orientation: landscape)');
         const mediaQueryPortrait = window.matchMedia('(orientation: portrait)');          
         function tiltLandscape(e) {
-            if (e.matches && '(orientation: landscape)' && enlargedGalleryWide === true) {               
-                minimizeEnlargedWideGallery();  
-            } else {
-                closeEnlarging.closeFun();                             
-            }          
+            if(enlargedWideGallery === true || enlargedMobileGallery === true) {
+                if (e.matches && '(orientation: landscape)' && enlargedWideGallery === true) {               
+                    minimizeEnlargedWideGallery();   
+                } else {
+                    closeEnlarging.closeFun();                          
+                }
+            }         
         }
         mediaQueryLandscape.addListener(tiltLandscape);
         tiltLandscape(mediaQueryLandscape);
 
         function tiltPortrait(e) {
-            if (e.matches && '(orientation: portrait)' && enlargedGalleryWide === true) {               
-                minimizeEnlargedWideGallery();
-            } else {                       
-                closeEnlarging.closeFun();
+            if(enlargedWideGallery === true || enlargedMobileGallery === true) {
+                if (e.matches && '(orientation: portrait)' && enlargedWideGallery === true) {               
+                    minimizeEnlargedWideGallery();    
+                } else {                       
+                    closeEnlarging.closeFun();    
+                }
             }        
         }        
         mediaQueryPortrait.addListener(tiltPortrait);
-        tiltPortrait(mediaQueryPortrait);
-        }
+        tiltPortrait(mediaQueryPortrait);        
     })();
 
     // //tilt gallery when rotating screen with enlargedMobileGallery gallery
