@@ -91,11 +91,11 @@ const gallery = (() => {
                 let nextPicture = document.querySelector("[data-active='next']");
                 let mainPicture = document.querySelector("[data-active='main']");
             if (window.innerWidth > 480 && enlargedMobileGallery === true){    
-                mainPicture.style.visibility = "visible"
+                mainPicture.style.visibility = "visible";
                 prevPicture.style.visibility = "hidden";
                 nextPicture.style.visibility = "hidden";                    
             } else if (enlargedMobileGallery === false) {
-                mainPicture.style.visibility = "visible"
+                mainPicture.style.visibility = "visible";
                 prevPicture.style.visibility = "visible";
                 nextPicture.style.visibility = "visible"; 
             } else if (window.innerWidth <= 480) {
@@ -148,7 +148,7 @@ const gallery = (() => {
                 close.addEventListener("click", () => {
                     closeFun();                    
                 })        
-                const closeFun = () => {
+                const closeFun = () => {                   
                     document.getElementById("close-enlarged-gallery-wrapper").style.visibility = "hidden";                   
                     document.body.style.overflow = "";
                     document.querySelector(".navbar-mobile").style.visibility = "visible";   
@@ -168,15 +168,16 @@ const gallery = (() => {
                     document.getElementById("index-social-media").style.visibility = ""; 
                     // document.getElementById("see-more-mobile-gallery").style.backgroundColor = "";
                     allPaintings.forEach(painting => {
-                        painting.style.width = ""
-                        painting.style.height = ""
+                        painting.style.width = "";
+                        painting.style.height = "";
                     });
-                    if (window.innerWidth > 480 && window.innerWidth < 769){
+                    console.log(window.innerWidth)
+                    if (window.innerHeight > 480 && window.innerHeight < 769) {
                         document.querySelector(".navbar").style.visibility = "visible";
                         let prevPicture = document.querySelector("[data-active='prev']");
                         let nextPicture = document.querySelector("[data-active='next']");
                         prevPicture.style.visibility = "visible";
-                        nextPicture.style.visibility = "visible";                        
+                        nextPicture.style.visibility = "visible";                      
                     }
                     enlargedMobileGallery = false;
                 }   
