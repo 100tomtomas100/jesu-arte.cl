@@ -171,7 +171,6 @@ const gallery = (() => {
                         painting.style.width = "";
                         painting.style.height = "";
                     });
-                    console.log(window.innerWidth)
                     if (window.innerHeight > 480 && window.innerHeight < 769) {
                         document.querySelector(".navbar").style.visibility = "visible";
                         let prevPicture = document.querySelector("[data-active='prev']");
@@ -181,7 +180,7 @@ const gallery = (() => {
                     }
                     enlargedMobileGallery = false;
                 }   
-                return {closeFun}     
+                return {closeFun};    
     })();     
     //wide screen
     const allPaintings768 = document.querySelectorAll(".index-gallery-wide-size768");
