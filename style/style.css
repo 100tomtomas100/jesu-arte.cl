@@ -9,6 +9,10 @@
    font-family: "Proxima-Soft";
     src: url("../fonts/FontsFree-Net-ProximaSoft-Bold.ttf") format("truetype"); 
 }
+@font-face {
+    font-family: "Klein";
+     src: url("../fonts/Klein-Book.ttf") format("truetype"); 
+ }
 /*index-body*/
 #index-body {
     background-size: cover;
@@ -35,6 +39,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     font-size: calc(7px + 2vw);
+    font-family: "Klein";
 }
 #about-us-text-wrapper p {
     display: grid;
@@ -43,7 +48,7 @@
 #about-us-text-wrapper {
     width: 80vw;    
     display: grid;
-    text-align: center;
+    text-align: left;
     background-color: #F0ECEC;
     padding: 5px;
     border-radius: 10px;
@@ -146,7 +151,7 @@
         font-size: calc(10px + 0.8vw);
         padding-top: 15%;
         padding-left: 10%;
-        font-family: "PT serif", "Arial", "Verdana";
+        font-family: "Klein", "PT serif", "Arial", "Verdana";
         background-image: url("../img/background/background-768px/about-us-background.jpg");
     }
     .toggler {
@@ -184,15 +189,15 @@
         padding-top: 3%;
         background-image: none;
         font-size: calc(10px + 0.4vw);
-        font-family: 'Quicksand', 'Courgette', "PT serif", "Arial", "Verdana";  
+        font-family: "Klein", 'Quicksand', 'Courgette', "PT serif", "Arial", "Verdana";  
     }
     .toggler {
         font-size: calc(9px + 1vw);
     }
     #about-us-text-wrapper {
         text-align: justify;
-        width: 38vw;
-        margin-left: 3%;
+        width: 45vw;
+        margin-left: 50%;
     }
     #index-mobile-gallery {
         display: none;
